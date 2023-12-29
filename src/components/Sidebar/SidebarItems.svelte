@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { sidebarOpen } from '../store';
+	import { sidebarOpen } from '../../stores/side-bar-store';
 	import { data } from './data';
 
 	const style = {

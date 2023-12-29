@@ -1,13 +1,15 @@
 <script>
 	import Donut from '../components/FunStuffs/Donut.svelte';
 
-	import Button from '../components/Buttons/Button.svelte';
-	import MainContainer from '../components/Containers/MainContainer.svelte';
-	import Grid2ColContainer from '../components/Containers/Grid2ColContainer.svelte';
-	import ComponentContainer from '../components/Containers/ComponentContainer.svelte';
+	import Button from '../components/common/Buttons/Button.svelte';
+	import MainContainer from '../components/common/Containers/MainContainer.svelte';
+	import Grid2ColContainer from '../components/common/Containers/Grid2ColContainer.svelte';
+	import ComponentContainer from '../components/common/Containers/ComponentContainer.svelte';
+
+	import Dock from '../components/Sidebar/Dock.svelte';
 
 	import Mail from '../assets/social-icons/Mail.svelte';
-	import Github from '../assets/social-icons/Github.svelte';
+	// import Github from '../assets/social-icons/Github.svelte';
 	import Linkedin from '../assets/social-icons/Linkedin.svelte';
 </script>
 
@@ -66,6 +68,8 @@
 			</div>
 		</ComponentContainer>
 
-		<ComponentContainer slot="right" />
+		<ComponentContainer slot="right" >
+			<Dock />
+		</ComponentContainer>
 	</Grid2ColContainer>
 </MainContainer>

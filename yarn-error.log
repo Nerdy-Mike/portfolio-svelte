@@ -1,5 +1,5 @@
 Arguments: 
-  /opt/homebrew/Cellar/node/21.4.0/bin/node /Users/nerdymike/.yarn/bin/yarn.js add svelte-feather-icons -D
+  /opt/homebrew/Cellar/node/21.4.0/bin/node /Users/nerdymike/.yarn/bin/yarn.js add -D svelt-motion
 
 PATH: 
   ANDROID_HOME:/Users/nerdymike/Library/pnpm:/Users/nerdymike/develop/flutter/bin:/Users/nerdymike/.bun/bin:/opt/homebrew/bin:/Users/nerdymike/.yarn/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:ANDROID_HOME:/Users/nerdymike/Library/pnpm:/Users/nerdymike/develop/flutter/bin:/Users/nerdymike/.bun/bin
@@ -14,12 +14,17 @@ Platform:
   darwin arm64
 
 Trace: 
-  SyntaxError: /Users/nerdymike/my-projects/sveltekit-portfolio/package.json: Expected double-quoted property name in JSON at position 1256 (line 43 column 1)
-      at JSON.parse (<anonymous>)
-      at /Users/nerdymike/.yarn/lib/cli.js:1629:59
-      at Generator.next (<anonymous>)
-      at step (/Users/nerdymike/.yarn/lib/cli.js:310:30)
-      at /Users/nerdymike/.yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/svelt-motion: Not found
+      at params.callback [as _callback] (/Users/nerdymike/.yarn/lib/cli.js:66145:18)
+      at self.callback (/Users/nerdymike/.yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:519:28)
+      at Request.<anonymous> (/Users/nerdymike/.yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:519:28)
+      at IncomingMessage.<anonymous> (/Users/nerdymike/.yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:633:28)
+      at IncomingMessage.emit (node:events:531:35)
+      at endReadableNT (node:internal/streams/readable:1696:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
 npm manifest: 
   {
@@ -55,6 +60,7 @@ npm manifest:
   		"prettier-plugin-svelte": "^2.8.1",
   		"svelte": "^3.54.0",
   		"svelte-check": "^2.9.2",
+  		"svelte-feather-icons": "^4.1.0",
   		"svelte-preprocess": "^4.10.7",
   		"tailwindcss": "^3.1.5",
   		"tslib": "^2.4.1",
@@ -62,8 +68,7 @@ npm manifest:
   		"vite": "^4.0.0",
   		"vitest": "^0.25.3"
   	},
-  	"type": "module",
-  
+  	"type": "module"
   }
 
 yarn manifest: 

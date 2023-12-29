@@ -4,11 +4,11 @@
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import { page } from '$app/stores';
 
-	import { closeSidebar, sidebarOpen } from '../home/store';
+	import { closeSidebar, sidebarOpen } from '../stores/side-bar-store';
 
-	import Overlay from '../home/Overlay.svelte';
-	import Sidebar from './../home/sidebar/Sidebar.svelte';
-	import TopBar from './../home/topbar/TopBar.svelte';
+	import Overlay from '../components/Overlay.svelte';
+	import Sidebar from '../components/Sidebar/Sidebar.svelte';
+	import TopBar from '../components/Topbar/TopBar.svelte';
 
 	import '../app.postcss';
 

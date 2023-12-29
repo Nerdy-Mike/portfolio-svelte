@@ -3,7 +3,7 @@
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
 
-	import { openSidebar } from '../store';
+	import { openSidebar } from '../../stores/side-bar-store';
 
 	const themes = [
 		'dark', // night sky
