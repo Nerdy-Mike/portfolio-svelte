@@ -2,5 +2,5 @@ export interface ISidebarItem {
 	id: string;
 	title: string;
 	path: string;
-	icon: any;
+	icon: ConstructorOfATypedSvelteComponent | null;
 }

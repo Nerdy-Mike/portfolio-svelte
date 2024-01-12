@@ -1,16 +1,11 @@
 <script>
-	import Donut from '../components/FunStuffs/Donut.svelte';
-
-	import Button from '../components/common/Buttons/Button.svelte';
 	import MainContainer from '../components/common/Containers/MainContainer.svelte';
 	import Grid2ColContainer from '../components/common/Containers/Grid2ColContainer.svelte';
 	import ComponentContainer from '../components/common/Containers/ComponentContainer.svelte';
 
-	import Dock from '../components/Sidebar/Dock.svelte';
+	import TechStack from '../components/TechStack/TechStack.svelte';
 
-	import Mail from '../assets/social-icons/Mail.svelte';
-	// import Github from '../assets/social-icons/Github.svelte';
-	import Linkedin from '../assets/social-icons/Linkedin.svelte';
+	import Spirograph from '../components/FunStuffs/Spirograph/Spirograph.svelte';
 </script>
 
 <MainContainer>
@@ -68,8 +63,9 @@
 			</div>
 		</ComponentContainer>
 
-		<ComponentContainer slot="right" >
-			<Dock />
+		<ComponentContainer slot="right">
+			<!-- <TechStack /> -->
+			<Spirograph />
 		</ComponentContainer>
 	</Grid2ColContainer>
 </MainContainer>

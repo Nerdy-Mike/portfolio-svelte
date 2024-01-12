@@ -3,8 +3,6 @@
 
 	import type { ISidebarItem } from './data/type';
 
-
-
 	export let mouseY;
 	export let item: ISidebarItem;
 
