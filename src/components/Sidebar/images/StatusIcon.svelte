@@ -1,6 +1,13 @@
+<script lang="ts">
+	export let sizePx = 24;
+	export let className: string;
+</script>
+
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	class="h-8 w-8"
+	style:width={sizePx}
+	style:height={sizePx}
+	class={className}
 	fill="none"
 	viewBox="0 0 24 24"
 	stroke="currentColor"

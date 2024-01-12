@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { sidebarOpen } from '../../stores/side-bar-store';
+
+	import Dock from './Dock.svelte';
+
 	import SidebarItems from './SidebarItems.svelte';
 
 	const style = {
@@ -25,7 +28,7 @@
    `}
 >
 	<div class="pb-32 lg:pb-6 h-full">
-		<SidebarItems />
+		<Dock />
 	</div>
 </aside>
 
