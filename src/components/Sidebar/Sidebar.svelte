@@ -22,7 +22,7 @@
       bg-gray-900
       h-screen
       overflow-y-auto
-      lg:bg-transparent lg:block lg:relative lg:w-16 2xl:w-20 lg:z-auto 
+      lg:bg-transparent lg:block lg:relative lg:w-16 2xl:w-20 lg:z-auto lg:overflow-y-visible
       ${style.mobileOrientation[mobileOrientation]}
       ${$sidebarOpen ? 'absolute w-8/12 z-40 sm:w-5/12' : 'hidden'}
    `}
