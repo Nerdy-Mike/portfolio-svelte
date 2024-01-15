@@ -23,12 +23,13 @@
 </script>
 
 <div class="bg-base-300 h-screen bg-image">
-	<div class=" flex items-start h-full">
+	<div class="flex flex-col items-start h-screen">
 		<Overlay />
-		<Sidebar mobileOrientation="end" />
-		<div class="flex flex-col h-full pl-0 w-full pr-4 py-4">
-			<TopBar />
-			<main class="main h-full pb-36 pt-4 px-2 md:pb-8 md:px-4 lg:px-6 card">
+		<TopBar />
+
+		<div class="flex flex-row w-full h-full">
+			<Sidebar mobileOrientation="end" />
+			<main class="main flex-grow w-full px-2 md:px-4 lg:px-6 2xl:px-8 card mr-10 mb-10">
 				<slot />
 			</main>
 		</div>

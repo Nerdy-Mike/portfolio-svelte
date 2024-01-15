@@ -24,7 +24,7 @@
 
 <header class="h-16 relative w-full z-10 flex flex-row justify-between items-center">
 	<div class="flex items-center h-full">
-		<div class="-ml-40 scale-[40%] 2xl:-ml-32 2xl:scale-[60%]">
+		<div class="-ml-20 scale-[40%] 2xl:-ml-2 4xl:-ml-1 2xl:scale-[60%]">
 			<svg
 				width="429"
 				height="34.14424810963878"

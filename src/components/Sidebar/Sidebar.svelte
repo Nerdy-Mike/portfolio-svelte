@@ -20,7 +20,7 @@
 			top-0
 	    scrollbar
       bg-gray-900
-      h-screen
+      h-full
       overflow-y-auto
       lg:bg-transparent lg:block lg:relative lg:w-16 2xl:w-20 lg:z-auto lg:overflow-y-visible
       ${style.mobileOrientation[mobileOrientation]}
