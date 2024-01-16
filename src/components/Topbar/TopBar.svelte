@@ -23,13 +23,9 @@
 </script>
 
 <header class="h-16 relative w-full z-10 flex flex-row justify-between items-center">
-	<div class="flex items-center h-full">
-		<div class="-ml-20 scale-[40%] 2xl:-ml-2 4xl:-ml-1 2xl:scale-[60%]">
-			<svg
-				width="429"
-				height="34.14424810963878"
-				viewBox="0 0 349.99999999999994 27.85661267686147"
-				class="looka-1j8o68f"
+	<div class="flex h-full w-full bg-black">
+		<div class="">
+			<svg width="300" height="75" viewBox="0 0 400 45" class="looka-1j8o68f"
 				><defs id="SvgjsDefs2762" /><g
 					id="SvgjsG2763"
 					transform="matrix(0.9584939556746689,0,0,0.9584939556746689,0.4680319945245631,-10.858778477227494)"
@@ -41,6 +37,7 @@
 			>
 		</div>
 	</div>
+
 	<div class="flex-none">
 		<ul class="menu menu-horizontal px-1 z-50">
 			<li>

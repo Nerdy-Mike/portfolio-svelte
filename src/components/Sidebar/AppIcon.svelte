@@ -54,7 +54,7 @@ out:fly={{ x: -20, y: 0, opacity: 0, easing: quintOut, duration: 500 }} -->
 
 		{#if shouldAnimate}
 			<div
-				class="absolute top-0 left-20 kbd text-primary-content text-lg bg-base-100"
+				class="absolute top-0 left-20 kbd text-primary-content text-lg bg-base-100 z-50"
 				style="top: {topPositionPx}px"
 				transition:fly={{
 					duration: 500,

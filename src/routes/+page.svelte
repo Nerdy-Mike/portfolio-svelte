@@ -64,8 +64,14 @@
 		</ComponentContainer>
 
 		<ComponentContainer slot="right">
-			<!-- <TechStack /> -->
-			<Spirograph />
+			<div class="grid grid-flow-row">
+				<div class="row-span-1">
+					<Spirograph />
+				</div>
+				<div class="row-span-1">
+					<TechStack />
+				</div>
+			</div>
 		</ComponentContainer>
 	</Grid2ColContainer>
 </MainContainer>

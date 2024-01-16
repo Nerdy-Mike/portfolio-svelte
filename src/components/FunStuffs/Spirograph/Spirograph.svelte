@@ -6,8 +6,8 @@
 	var M = 1,
 		handlrot = 0,
 		handrrot = 0,
-		handerot = 0,
-		/*
+		handerot = 0;
+	/*
 mech.centerx				__Centerx
 mech.centery				__Centery
 mech.pic.rot				__Crot
@@ -26,10 +26,9 @@ mech.hands.hand[1].arm2		__Rarm2
 ext							__Ext
 							__Erot		// v2 variables !!!
 							__Erota
-							__Earm
-*/ __Centerx = 480,
-		__Centery = 480,
-		__Crot = 0,
+							__Earm,
+*/
+	var __Crot = 0,
 		__Crota = -1.44,
 		__HBx = 30,
 		__HBy = -700,
@@ -48,7 +47,7 @@ ext							__Ext
 		__Earm = 0,
 		/*mech = {
 
-	centerx: 480*M, centery: 480*M,
+	centerx: minDimension/2*M, centery: minDimension/2*M,
 	pic: { rot: 0, rota: -1.44 },
 
 	hands: { 	basex: 30*M, basey: -700*M,		// hands base
@@ -102,7 +101,7 @@ ext							__Ext
 		cutpixels = true,
 		font = [
 			'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-/=*;:,.<>',
-			'0204284442324335464738181215080307480525452224683316263634174130100106373120004014232713',
+			'0204284442324335464738181215080307minDimension/2525452224683316263634174130100106373120004014232713',
 			'4ABCDE/BD 4AFGDHIJKLM/NH/OL 4GFMPQLKJ 4AFGJKO/LM 4EAOR/ST 4AOR/ST 4HUEMPQLR 4ER/US/OA 2VA/ML/CO 4RGFMP 4ENR/AO/NS 4EAO 4ERWOA 4REOA 4UGFMPQLKJU 4SHIJKOA 4DVMPQLKJD 4ENHIJKOA/NS 4JKLQGFMP 4RO/CV 4RGFMPO 6XFO 6XEHVO 4RA/EO 4RTO/TV 4EARO 4YVMPSZaHYE 4OBabUGFVBA 4EMPSZI 4EDVMPSZaDR 4FMPSZbUcB 4MdCKJ/HS 4EMPSZbUefgh 4BabUE/AO 0Ai/QO 3Kj/bklgh 4EWI/AO/WB 1MPO 4Ai/SZTbUE/WT 4Ai/BabUE 4GFMPSZbUG 4mi/SZbUGFA 4nI/EMPSZbU 4Ai/BabU 4IZSocGFA 4GFpC/Ii 4IE/DVMPi 4IVi 4IFaMi 4IA/Ei 4Igm/Vi 4EAIi 3YVMPQLCjY 2QLM/VA 4EABNHIJKLQ 4QLKJIHDGFMP/TH 4DBKF 4ROibUGFMP 4SHDGFMPiCK 4ORV 4NBPMFGDHNiQLKJIH 4UNiQLKJDVM 4pq/US 4US 4RA 4Ii/DB 4US/pq/JP/GQ 1ZN/oMh 1ZN/or 1rMh 0PA 3KSF 3OHA'
 		],
 		baseoffsxmin = -300,
@@ -118,15 +117,34 @@ ext							__Ext
 	let canvas3;
 	let canvasb;
 
+	const MAX_WIDTH = 960;
+
 	onMount(() => {
 		let ctx = canvas.getContext('2d');
 		let ctx2 = canvas2.getContext('2d');
 		let ctx3 = canvas3.getContext('2d');
 		let ctxb = canvasb.getContext('2d');
-		let W = 960;
-		let H = 960;
-		let bw = 480;
-		let bh = 480;
+
+		resizeCanvasToDisplaySize(canvas);
+		resizeCanvasToDisplaySize(canvas2);
+		resizeCanvasToDisplaySize(canvas3);
+		resizeCanvasToDisplaySize(canvasb);
+		let canvasWidth = canvas.width;
+		let canvasHeight = canvas.height;
+
+		let minDimension = Math.min(canvasWidth, canvasHeight);
+
+		console.log(minDimension);
+
+		let __Centerx = minDimension / 2,
+			__Centery = minDimension / 2;
+
+		let W = minDimension;
+		let H = minDimension;
+		// get with of the canvas
+
+		let bw = minDimension / 2;
+		let bh = minDimension / 2;
 
 		canvas.width = W * M;
 		canvas.height = H * M;
@@ -139,11 +157,19 @@ ext							__Ext
 		canvasb.style.width = '240px';
 		canvasb.style.height = '240px';
 
+		function resizeCanvasToDisplaySize(canvas) {
+			const { width, height } = canvas.getBoundingClientRect();
+			if (canvas.width !== width || canvas.height !== height) {
+				canvas.width = width;
+				canvas.height = height;
+			}
+		}
+
 		function onResize() {
 			var ch = window.innerHeight;
 			if (CH == ch) return;
 			CH = ch;
-			if (CH < 480) CH = 480;
+			if (CH < minDimension / 2) CH = minDimension / 2;
 			if (CH < H) {
 				CW = W * (CH / H);
 			} else {
@@ -362,7 +388,6 @@ ext							__Ext
 				if (lw > 5) lw = 5;
 				if (lw < 1) lw = 1;
 				lw = lw / 2;
-				console.log('lw: ' + lw + ' d: ' + d + ' dd: ' + dd);
 			}
 
 			switch (colormode) {
@@ -1390,6 +1415,20 @@ ext							__Ext
 			redraw();
 		}
 
+		function resizeCanvasToDisplaySize(canvas) {
+			// look up the size the canvas is being displayed
+			const { width, height } = canvas.getBoundingClientRect();
+
+			// adjust canvas's buffer size to match
+			if (canvas.width !== width || canvas.height !== height) {
+				canvas.width = width;
+				canvas.height = height;
+				return true; // here you can return some useful information like whether the canvas was resized or not
+			}
+
+			return false;
+		}
+
 		jQuery(function () {
 			// start loop!
 			jQuery(window).bind('resize', onResize);
@@ -1420,11 +1459,11 @@ ext							__Ext
 	});
 </script>
 
-<div class="bg-transparent">
-	<canvas width="960" height="960" bind:this={canvas} class="bg-transparent" />
-	<canvas width="960" height="960" bind:this={canvas2} class="bg-transparent" />
-	<canvas width="960" height="960" bind:this={canvas3} class="bg-transparent" />
-	<canvas id="buffer" width="960" height="960" bind:this={canvasb} />
+<div class="bg-transparent w-full aspect-square">
+	<canvas bind:this={canvas} class="bg-transparent w-full h-full object-contain" />
+	<canvas bind:this={canvas2} class="bg-transparent w-full h-full object-contain" />
+	<canvas bind:this={canvas3} class="bg-transparent w-full h-full object-contain" />
+	<canvas id="buffer" class="bg-transparent w-full h-full" bind:this={canvasb} />
 </div>
 
 <style>

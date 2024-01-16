@@ -9,6 +9,7 @@
 	import Overlay from '../components/Overlay.svelte';
 	import Sidebar from '../components/Sidebar/Sidebar.svelte';
 	import TopBar from '../components/Topbar/TopBar.svelte';
+	import TurnOff from '../components/FunStuffs/TurnOff/TurnOff.svelte';
 
 	import '../app.postcss';
 
@@ -22,16 +23,18 @@
 	}
 </script>
 
-<div class="bg-base-300 h-screen bg-image">
-	<div class="flex flex-col items-start h-screen">
+<div class="flex bg-base-300 h-screen bg-image">
+	<!-- Desktop sidebar -->
+	<TurnOff />
+	<aside class="z-10 flex-shrink-0 hidden pl-2 md:block">
+		<Sidebar mobileOrientation="end" />
+	</aside>
+
+	<div class="flex flex-col flex-1 w-full overflow-y-auto">
 		<Overlay />
 		<TopBar />
-
-		<div class="flex flex-row w-full h-full">
-			<Sidebar mobileOrientation="end" />
-			<main class="main flex-grow w-full px-2 md:px-4 lg:px-6 2xl:px-8 card mr-10 mb-10">
-				<slot />
-			</main>
+		<div class="flex flex-grow">
+			<slot />
 		</div>
 	</div>
 </div>
@@ -41,19 +44,5 @@
 		background-image: url('../assets/backgrounds/space.jpg');
 		background-size: cover;
 		background-position: center;
-	}
-
-	.main {
-		color: #f9fafb;
-		background-color: rgba(16 18 27 / 50%);
-		overflow: auto;
-	}
-	.main::-webkit-scrollbar {
-		width: 6px;
-		border-radius: 10px;
-	}
-	.main::-webkit-scrollbar-thumb {
-		background: rgb(1 2 3 / 40%);
-		border-radius: 10px;
 	}
 </style>
