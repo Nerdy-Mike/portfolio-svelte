@@ -24,7 +24,7 @@
 
 <header class="h-16 relative w-full z-10 flex flex-row justify-between items-center">
 	<div class="flex h-full w-full bg-black">
-		<div class="">
+		<a class="" href="/">
 			<svg width="300" height="75" viewBox="0 0 400 45" class="looka-1j8o68f"
 				><defs id="SvgjsDefs2762" /><g
 					id="SvgjsG2763"
@@ -35,7 +35,7 @@
 					/></g
 				></svg
 			>
-		</div>
+		</a>
 	</div>
 
 	<div class="flex-none">

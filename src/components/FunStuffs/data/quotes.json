@@ -1,0 +1,12 @@
+{
+	"quotes": [
+		{
+			"content": "This is a single-line quote.",
+			"author": "John Doe"
+		},
+		{
+			"content": "This is a multi-line quote.\nIt has multiple lines of content.",
+			"author": "Jane Smith"
+		}
+	]
+}

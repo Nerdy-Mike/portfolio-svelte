@@ -29,19 +29,19 @@ ext							__Ext
 							__Earm,
 */
 	var __Crot = 0,
-		__Crota = -1.44,
-		__HBx = 30,
-		__HBy = -700,
-		__Hdist = 1174,
+		__Crota = -21.91999999999945,
+		__HBx = 62,
+		__HBy = -403,
+		__Hdist = 937,
 		__Lrot = 0,
-		__Lrota = 2.5,
-		__Larm1 = 120,
-		__Larm2 = 860,
+		__Lrota = 6842.115999999992,
+		__Larm1 = 93,
+		__Larm2 = 687,
 		__Rrot = 0,
-		__Rrota = -3.6,
-		__Rarm1 = 100,
-		__Rarm2 = 1050,
-		__Ext = 75,
+		__Rrota = -2456.5999999999967,
+		__Rarm1 = 257,
+		__Rarm2 = 637,
+		__Ext = 57,
 		__Erot = 0, // v2 variables !!!
 		__Erota = 0,
 		__Earm = 0,
@@ -85,11 +85,11 @@ ext							__Ext
 		firstPoint = true,
 		freeze = false,
 		totalLength = 0,
-		brightness = 1,
+		brightness = 5,
 		livespeed = 1,
-		nolivespeed = 50,
+		nolivespeed = 100,
 		speed = nolivespeed,
-		colormode = 0,
+		colormode = 4,
 		livedisplay = false,
 		variablewidth = true,
 		notsornd = true,
@@ -488,7 +488,6 @@ ext							__Ext
 		}
 		function reset() {
 			alphafillcanvas(ctx3, 0);
-			testtext();
 
 			clearmech();
 			__Crot = 0;
@@ -807,37 +806,6 @@ ext							__Ext
 					firstPoint = true;
 					setCleandraw(false);
 					if (alt) redraw();
-					break;
-
-				case 'download':
-					location.href = document.getElementById('theBitmapOverlay').toDataURL('image/png');
-					//location.target = "_blank";
-					//location.download = "test.png";
-					break;
-
-				case 'upload':
-					if (!canupload) {
-						return;
-					}
-					imageresize(ctx2, ctxb);
-					var dataURL = document.getElementById('buffer').toDataURL('image/jpg');
-					jQuery
-						.ajax({
-							type: 'POST',
-							url: 'upload.php',
-							data: { imgBase64: dataURL, params: location.hash, func: 1 }
-						})
-						.done(function (e) {
-							console.log(e);
-							var resp = e.split(',');
-							if (resp[0] == 0) {
-								console.log('successfull');
-							} else {
-								console.log('unsucessfull');
-							}
-						});
-
-					//imageresize( ctx2, ctxb, 240, 240 );
 					break;
 
 				case 'random1':
@@ -1408,12 +1376,10 @@ ext							__Ext
 			g(0);
 			g(1); // version
 			h += Math.ceil((CRC % 800) + CRC2 * 2);
-			location.hash = '#' + h;
 		}
-		function onHashChange(e) {
-			parseHash();
-			redraw();
-		}
+
+		const hashValue =
+			'#0,200,4,0,5,-81.91999999999945,62,-403,937,6842.115999999992,93,687,-2456.5999999999967,77,837,57,90,0,1,554';
 
 		function resizeCanvasToDisplaySize(canvas) {
 			// look up the size the canvas is being displayed
@@ -1447,21 +1413,19 @@ ext							__Ext
 				);
 			})();
 			mainloop();
-			testtext();
 			UIreset();
 
 			//reset();
 			jQuery('p.title').each(function () {
 				replaceWithSVGText(jQuery(this), true, 6, 6);
 			});
-			replaceWithSVGText(jQuery('#footer a'), true, 1, 1);
 		});
 	});
 </script>
 
-<div class="bg-transparent w-full aspect-square">
+<div class=" bg-transparent w-full aspect-square">
 	<canvas bind:this={canvas} class="bg-transparent w-full h-full object-contain" />
-	<canvas bind:this={canvas2} class="bg-transparent w-full h-full object-contain" />
+	<canvas bind:this={canvas2} class="scale-50 2xl:scale-75 bg-transparent w-full h-full object-contain" />
 	<canvas bind:this={canvas3} class="bg-transparent w-full h-full object-contain" />
 	<canvas id="buffer" class="bg-transparent w-full h-full" bind:this={canvasb} />
 </div>
@@ -1475,5 +1439,9 @@ ext							__Ext
 
 	#buffer {
 		display: none;
+	}
+
+	.element {
+		transform: scale(0.5);
 	}
 </style>

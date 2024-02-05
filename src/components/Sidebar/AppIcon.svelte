@@ -11,7 +11,7 @@
 
 	export let mouseY: any;
 	export let item: ISidebarItem;
-	export let shouldAnimate: boolean;
+	let shouldAnimate = false; // Define shouldAnimate
 
 	let minSize = SIDE_BAR_ICON_SIZE_ORIGINAL;
 	let maxSize = SIDE_BAR_ICON_SIZE_EXPLANDED;
@@ -38,8 +38,22 @@
 	// $: shouldAnimate = $iconSize > 40;
 
 	const style = {
-		path: `flex items-center justify-center h-full w-full text-white whitespace-pre`
+		path: `flex items-center justify-center h-full w-full text-white whitespace-pre `
 	};
+
+	function onMouseEnter(
+		e: MouseEvent & {
+			currentTarget: EventTarget & HTMLUListElement;
+		}
+	) {
+		mouseY.set(e.pageY);
+		shouldAnimate = true; // Set shouldAnimate to true when mouse enters
+	}
+
+	function onMouseLeave() {
+		mouseY.set(Infinity);
+		shouldAnimate = false; // Set shouldAnimate to false when mouse leaves
+	}
 </script>
 
 <!-- 
@@ -47,7 +61,13 @@ in:fly={{ x: -20, y: 0, opacity: 0.5, easing: quintOut, duration: 500 }}
 out:fly={{ x: -20, y: 0, opacity: 0, easing: quintOut, duration: 500 }} -->
 
 <Motion>
-	<div bind:this={ref} style="height: {$height ?? 40}px" class="relative">
+	<div
+		bind:this={ref}
+		style="height: {$height ?? 40}px"
+		class="relative py-8"
+		on:mouseenter={onMouseEnter}
+		on:mouseleave={onMouseLeave}
+	>
 		<a class={style.path} href={item.path} aria-label={item.title}>
 			<svelte:component this={item.icon} {sizePx} className="h-10 w-10" />
 		</a>

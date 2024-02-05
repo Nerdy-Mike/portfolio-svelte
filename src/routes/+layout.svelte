@@ -10,6 +10,7 @@
 	import Sidebar from '../components/Sidebar/Sidebar.svelte';
 	import TopBar from '../components/Topbar/TopBar.svelte';
 	import TurnOff from '../components/FunStuffs/TurnOff/TurnOff.svelte';
+	import WelcomeScreen from '../components/FunStuffs/TurnOff/WelcomeScreen.svelte';
 
 	import '../app.postcss';
 
@@ -24,8 +25,12 @@
 </script>
 
 <div class="flex bg-base-300 h-screen bg-image">
+	<!-- Turn off effect  -->
+	<!-- <TurnOff>
+		<WelcomeScreen />
+	</TurnOff> -->
+
 	<!-- Desktop sidebar -->
-	<TurnOff />
 	<aside class="z-10 flex-shrink-0 hidden pl-2 md:block">
 		<Sidebar mobileOrientation="end" />
 	</aside>

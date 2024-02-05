@@ -22,7 +22,16 @@
 				height: '0',
 				background: '#ffffff'
 			});
+
+		setTimeout(toggleSwitchOff, 4000);
 	});
+
+	function toggleSwitchOff() {
+		if (isTurnedOn) {
+			timeline.restart();
+		}
+		isTurnedOn = false;
+	}
 
 	function toggleSwitcherTV() {
 		if (isTurnedOn) {
@@ -30,12 +39,13 @@
 		} else {
 			timeline.reverse();
 		}
-
 		isTurnedOn = !isTurnedOn;
 	}
 </script>
 
-<div class="screen" />
+<div class="screen">
+	<slot />
+</div>
 <button id="switcher-tv" on:click={toggleSwitcherTV}>Turn on/off</button>
 
 <style>

@@ -110,16 +110,37 @@
 			<IconWrapper {Icon} />
 		{/each}
 	</div>
-
-	<!-- <div class="flex flex-row flex-wrap justify-center">
-		{#each BE as Icon}
-			<IconWrapper {Icon} />
-		{/each}
-	</div>
-
-	<div class="flex flex-row flex-wrap justify-center">
-		{#each Tools as Icon}
-			<IconWrapper {Icon} />
-		{/each}
-	</div> -->
 </div>
+
+<!-- <section
+	class="mt-10 w-full lg:mt-20 lg:before:blur-sm lg:after:blur-sm lg:before:-left-2 lg:after:-right-2 lg:after:top-0 lg:before:top-0 lg:after:z-1 lg:after:rotate-180 lg:after:bg-white-gradient lg:after:tran xl:after-w-[25rem] xl:before-w-[25rem] 2xl:after:w-[30rem] lg:after:h-full lg:after:content-[''] lg:after:absolute lg:before:z-1 lg:before:bg-white-gradient 2xl:before:w-[30rem] lg:before:h-full relative lg:before:content-[''] lg:before:absolute"
+>
+	<div class="container max-w-full">
+		<div class="flex flex-col items-center">
+			<div class="whitespace-nowrap group py-5">
+				<div
+					class="inline-block animate-[slide_80s_linear_infinite] mr-10 group-hover:[animation-play-state:paused]"
+				>
+					<div class="flex gap-10">
+						<div class="flex gap-10">
+							{#each icons as Icon}
+								<IconWrapper {Icon} />
+							{/each}
+						</div>
+					</div>
+				</div>
+				<div
+					class="inline-block animate-[slide_80s_linear_infinite] group-hover:[animation-play-state:paused]"
+				>
+					<div class="flex gap-10">
+						<div class="flex gap-10">
+							{#each icons as Icon}
+								<IconWrapper {Icon} />
+							{/each}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->
