@@ -1,0 +1,79 @@
+{
+	"projects": [
+		{
+			"company": "E9",
+			"project": "Build you",
+			"description": "Build you is a platform that helps you build your dream house",
+			"role": "Frontend Developer",
+			"teamSize": 5,
+			"techStack": "React, Redux, TypeScript, TailwindCSS",
+			"duration": "6 months",
+			"showCase": "https://e9.com",
+			"responsibilities": [
+				"Worked on the frontend of the application",
+				"Implemented the UI/UX design",
+				"Worked with the backend team to integrate the frontend with the backend"
+			]
+		},
+		{
+			"company": "E9",
+			"project": "CPAP",
+			"description": "Build you is a platform that helps you build your dream house",
+			"role": "Frontend Developer",
+			"teamSize": 3,
+			"techStack": "React, Redux, TypeScript, TailwindCSS",
+			"duration": "6 months",
+			"showCase": "https://e9.com",
+			"responsibilities": [
+				"Worked on the frontend of the application",
+				"Implemented the UI/UX design",
+				"Worked with the backend team to integrate the frontend with the backend"
+			]
+		},
+		{
+			"company": "E9",
+			"project": "CPAP",
+			"description": "Build you is a platform that helps you build your dream house",
+			"role": "Frontend Developer",
+			"teamSize": 3,
+			"techStack": "React, Redux, TypeScript, TailwindCSS",
+			"duration": "6 months",
+			"showCase": "https://e9.com",
+			"responsibilities": [
+				"Worked on the frontend of the application",
+				"Implemented the UI/UX design",
+				"Worked with the backend team to integrate the frontend with the backend"
+			]
+		},
+		{
+			"company": "E9",
+			"project": "CPAP",
+			"description": "Build you is a platform that helps you build your dream house",
+			"role": "Frontend Developer",
+			"teamSize": 3,
+			"techStack": "React, Redux, TypeScript, TailwindCSS",
+			"duration": "6 months",
+			"showCase": "https://e9.com",
+			"responsibilities": [
+				"Worked on the frontend of the application",
+				"Implemented the UI/UX design",
+				"Worked with the backend team to integrate the frontend with the backend"
+			]
+		},
+		{
+			"company": "E9",
+			"project": "CPAP",
+			"description": "Build you is a platform that helps you build your dream house",
+			"role": "Frontend Developer",
+			"teamSize": 3,
+			"techStack": "React, Redux, TypeScript, TailwindCSS",
+			"duration": "6 months",
+			"showCase": "https://e9.com",
+			"responsibilities": [
+				"Worked on the frontend of the application",
+				"Implemented the UI/UX design",
+				"Worked with the backend team to integrate the frontend with the backend"
+			]
+		}
+	]
+}

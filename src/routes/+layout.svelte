@@ -35,10 +35,10 @@
 		<Sidebar mobileOrientation="end" />
 	</aside>
 
-	<div class="flex flex-col flex-1 w-full overflow-y-auto">
+	<div class="flex flex-col flex-1 w-full overflow-y-hidden h-screen">
 		<Overlay />
 		<TopBar />
-		<div class="flex flex-grow">
+		<div class="flex flex-grow overflow-y-auto mr-4 mb-4">
 			<slot />
 		</div>
 	</div>

@@ -10,7 +10,7 @@
 
 <MainContainer>
 	<Grid2ColContainer>
-		<ComponentContainer slot="left" noBackground>
+		<ComponentContainer slot="left" noBackground extraClass="w-full h-full">
 			<section class="flex flex-col justify-start items-center w-full h-full relative">
 				<div class="flex flex-col justify-center items-center h-full -mt-20">
 					<h1 class="text-xl tracking-wide text-gray-800 dark:text-gray-200 lg:text-4xl">
@@ -70,7 +70,7 @@
 			</section>
 		</ComponentContainer>
 
-		<ComponentContainer slot="right">
+		<ComponentContainer slot="right" extraClass="w-full h-full">
 			<TechStack />
 		</ComponentContainer>
 	</Grid2ColContainer>

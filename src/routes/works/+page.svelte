@@ -1,24 +1,108 @@
-<script>
-	import Button from '../../components/common/Buttons/Button.svelte';
-	import MainContainer from '../../components/common/Containers/MainContainer.svelte';
-	import Grid2ColContainer from '../../components/common/Containers/Grid2ColContainer.svelte';
+<script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+
+	import ProjectCard from '@/components/common/ProjectCard.svelte';
+	import MainContainer from '@/components/common/Containers/MainContainer.svelte';
+	import ComponentContainer from '@/components/common/Containers/ComponentContainer.svelte';
+
+	import worksData from './works.json';
+
+	let box: any;
+	let yTop = 0;
+	let yScroll = 0;
+	let offSet = 0;
+
+	let scrollHeight = 0;
+
+	function parseScroll() {
+		yTop = box.scrollTop;
+		if (yScroll === 0) {
+			yScroll = box.scrollHeight;
+		}
+
+		if (offSet === 0) {
+			offSet = box.clientHeight;
+		}
+
+		scrollHeight = yTop + (yTop / yScroll) * offSet;
+	}
+
+	onMount(() => {
+		parseScroll();
+	});
 </script>
 
-<MainContainer>
-	<Grid2ColContainer>
-		<div class="card-body" slot="left">
-			<h2 class="card-title">Card title!</h2>
-			<p>If a dog chews shoes whose shoes does he choose?</p>
-			<div class="card-actions justify-end">
-				<Button intent="primary" size="medium">Buy Now</Button>
+<MainContainer extraClass="card" withBg>
+	<div class="flex flex-col justify-center items-center">
+		<h1 class="text-4xl font-bold text-center">Works</h1>
+	</div>
+<div>
+
+</div>
+	<div
+		class="wrapper h-screen w-full px-4 py-8 overflow-auto pb-10"
+		bind:this={box}
+		on:scroll={parseScroll}
+		on:mousemove={parseScroll}
+	>
+	
+		<div class="flex h-full flex-col">
+			{#each worksData.projects as project, index (project)}
+				{#if index % 2 === 0}
+					<ProjectCard {project} />
+				{:else}
+					<div class="invisible">
+						<ProjectCard {project} />
+					</div>
+				{/if}
+			{/each}
+		</div>
+
+		<div class="flex items-start justify-center">
+			<div class="h-full w-[10] rounded-xl bg-gray-100">
+				<div
+					class=" rounded-full bg-white"
+					style="height: {scrollHeight}px; width: 10px; border-radius: 12px; background: linear-gradient(180deg, rgba(73,144,249,1) 0%, rgba(11,99,229,1) 14%, rgba(11,99,229,1) 50%, rgba(11,99,229,1) 90%, rgba(105,159,239,1) 98%, rgba(255,255,255,1) 99.5%); position: relative;"
+				>
+					<div class="absolute bottom-[-22px] right-[-11px] rounded-full bg-white p-1">
+						<div class="h-6 w-6 rounded-full bg-accent-default" />
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="card-body" slot="right">
-			<h2 class="card-title">Card title!</h2>
-			<p>If a dog chews shoes whose shoes does he choose?</p>
-			<div class="card-actions justify-end">
-				<Button intent="primary" size="medium">Buy Now</Button>
-			</div>
+
+		<div class="flex h-full flex-col">
+			{#each worksData.projects as project, index (project)}
+				{#if index % 2 !== 0}
+					<ProjectCard {project} />
+				{:else}
+					<div class="invisible">
+						<ProjectCard {project} />
+					</div>
+				{/if}
+			{/each}
 		</div>
-	</Grid2ColContainer>
+	</div>
+
+	
 </MainContainer>
+
+<style>
+	.wrapper {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 1fr 100px 1fr;
+		align-items: stretch;
+	}
+
+	.box {
+		display: flex;
+		flex-direction: column;
+		width: 300px;
+		height: 200px;
+		overflow: auto;
+		resize: both;
+		margin-bottom: 20px;
+		white-space: nowrap;
+	}
+</style>

@@ -1,11 +1,24 @@
 <script>
+	import Button from '../../components/common/Buttons/Button.svelte';
 	import MainContainer from '../../components/common/Containers/MainContainer.svelte';
 	import Grid2ColContainer from '../../components/common/Containers/Grid2ColContainer.svelte';
-	import ComponentContainer from '../../components/common/Containers/ComponentContainer.svelte';
-
-	import Spirograph from '../../components/FunStuffs/Spirograph/Spirograph.svelte';
 </script>
 
 <MainContainer>
-	<Spirograph />
+	<Grid2ColContainer>
+		<div class="card-body" slot="left">
+			<h2 class="card-title">Card title!</h2>
+			<p>If a dog chews shoes whose shoes does he choose?</p>
+			<div class="card-actions justify-end">
+				<Button intent="primary" size="medium">Buy Now</Button>
+			</div>
+		</div>
+		<div class="card-body" slot="right">
+			<h2 class="card-title">Card title!</h2>
+			<p>If a dog chews shoes whose shoes does he choose?</p>
+			<div class="card-actions justify-end">
+				<Button intent="primary" size="medium">Buy Now</Button>
+			</div>
+		</div>
+	</Grid2ColContainer>
 </MainContainer>

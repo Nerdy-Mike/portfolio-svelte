@@ -33,6 +33,8 @@
 	import Vite from '../../assets/tech-stacks/Vite.svelte';
 	import Webpack from '../../assets/tech-stacks/Webpack.svelte';
 
+	import CurlyArrow from '../../assets/icons/curly-arrow-64.png';
+
 	import IconWrapper from './IconWrapper.svelte';
 
 	const FE = [
@@ -104,11 +106,17 @@
 	];
 </script>
 
-<div class="flex flex-col justify-center items-center h-full">
+<div class="flex flex-col justify-center items-center h-full relative">
 	<div class="grid grid-cols-8">
 		{#each icons as Icon}
 			<IconWrapper {Icon} />
 		{/each}
+	</div>
+
+	<div class="absolute bottom-4 right-16 z-10">
+		<!-- svelte-ignore a11y-img-redundant-alt -->
+		<img src={CurlyArrow} alt="Description of the image" class="" />
+		<div class="w-40">My tech stack and why it doesn't matter</div>
 	</div>
 </div>
 

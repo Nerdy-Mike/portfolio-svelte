@@ -1,12 +1,15 @@
 <script lang="ts">
 	export let noBackground: boolean = false;
+	export let extraClass: string = '';
 </script>
 
-<div
-	class={`card component-container overflow-hidden h-full w-full ${noBackground ? 'no-bg' : ''}`}
+<section
+	class={`card component-container ${noBackground ? 'no-bg' : ''}
+	${extraClass}
+`}
 >
 	<slot />
-</div>
+</section>
 
 <style>
 	.component-container {
