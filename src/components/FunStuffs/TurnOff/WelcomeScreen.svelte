@@ -1,11 +1,17 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
+	import TypingEffect from '@/components/FunStuffs/TypingEffect/TypingEffect.svelte';
+
 	import Spirograph from '../Spirograph/Spirograph.svelte';
 
 	import quotes from '../data/quotes.json';
 
 	// get a random quote from the quotes.json
-
-	let randomQuote = quotes.quotes[Math.floor(Math.random() * quotes.quotes.length)];
+	let randomQuote: { content: string; author: string } | undefined;
+	onMount(() => {
+		randomQuote = quotes.quotes[Math.floor(Math.random() * quotes.quotes.length)];
+	});
 </script>
 
 <div class="grid grid-cols-2">
@@ -13,12 +19,13 @@
 		<Spirograph />
 	</div>
 
-	<div class="col-span-1 flex items-center justify-center">
-		<div class="text-center flex flex-col">
-			<p class="text-2xl font-bold">{randomQuote.content}</p>
-			<p class="text-lg font-semibold">{randomQuote.author}</p>
+	{#if randomQuote}
+		<div class="col-span-1 flex items-center justify-center">
+			<div class="text-center flex flex-col">
+				<TypingEffect quote={randomQuote.content} author={randomQuote.author} />
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
 
 <style>

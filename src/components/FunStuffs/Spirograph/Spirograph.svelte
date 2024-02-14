@@ -1425,7 +1425,10 @@ ext							__Ext
 
 <div class=" bg-transparent w-full aspect-square">
 	<canvas bind:this={canvas} class="bg-transparent w-full h-full object-contain" />
-	<canvas bind:this={canvas2} class="scale-50 2xl:scale-75 bg-transparent w-full h-full object-contain" />
+	<canvas
+		bind:this={canvas2}
+		class="scale-50 2xl:scale-75 bg-transparent w-full h-full object-contain"
+	/>
 	<canvas bind:this={canvas3} class="bg-transparent w-full h-full object-contain" />
 	<canvas id="buffer" class="bg-transparent w-full h-full" bind:this={canvasb} />
 </div>
@@ -1439,9 +1442,5 @@ ext							__Ext
 
 	#buffer {
 		display: none;
-	}
-
-	.element {
-		transform: scale(0.5);
 	}
 </style>

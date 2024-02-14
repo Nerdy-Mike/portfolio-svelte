@@ -6,11 +6,11 @@
 
 	import { closeSidebar, sidebarOpen } from '../stores/side-bar-store';
 
-	import Overlay from '../components/Overlay.svelte';
-	import Sidebar from '../components/Sidebar/Sidebar.svelte';
-	import TopBar from '../components/Topbar/TopBar.svelte';
-	import TurnOff from '../components/FunStuffs/TurnOff/TurnOff.svelte';
-	import WelcomeScreen from '../components/FunStuffs/TurnOff/WelcomeScreen.svelte';
+	import Overlay from '@/components/Overlay.svelte';
+	import Sidebar from '@/components/Sidebar/Sidebar.svelte';
+	import TopBar from '@/components/Topbar/TopBar.svelte';
+	import TurnOff from '@/components/FunStuffs/TurnOff/TurnOff.svelte';
+	import WelcomeScreen from '@/components/FunStuffs/TurnOff/WelcomeScreen.svelte';
 
 	import '../app.postcss';
 
@@ -24,11 +24,11 @@
 	}
 </script>
 
-<div class="flex bg-base-300 h-screen bg-image">
+<div class="flex bg-base-300 h-screen bg-image shake">
 	<!-- Turn off effect  -->
-	<!-- <TurnOff>
+	<TurnOff>
 		<WelcomeScreen />
-	</TurnOff> -->
+	</TurnOff>
 
 	<!-- Desktop sidebar -->
 	<aside class="z-10 flex-shrink-0 hidden pl-2 md:block">

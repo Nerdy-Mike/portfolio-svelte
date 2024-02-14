@@ -4,6 +4,10 @@
 
 	let isTurnedOn = true;
 	let timeline: any;
+	let showBlackScreen = null;
+	let shouldShowScreen = true;
+	let hideWhenDone = false;
+	let shouldShowNextButton = false;
 
 	onMount(() => {
 		timeline = new TimelineMax({
@@ -23,14 +27,27 @@
 				background: '#ffffff'
 			});
 
-		setTimeout(toggleSwitchOff, 4000);
+		setTimeout(() => {
+			// this match time with the text animation
+			shouldShowNextButton = true;
+		}, 4000);
 	});
 
-	function toggleSwitchOff() {
-		if (isTurnedOn) {
-			timeline.restart();
-		}
-		isTurnedOn = false;
+	function handleClearScreen() {
+		timeline.restart();
+		showBlackScreen = true;
+		setTimeout(() => {
+			showBlackScreen = false;
+		}, 1000);
+
+		setTimeout(() => {
+			showBlackScreen = true;
+			timeline.reverse();
+		}, 2000);
+
+		setTimeout(() => {
+			hideWhenDone = true;
+		}, 2400);
 	}
 
 	function toggleSwitcherTV() {
@@ -43,20 +60,35 @@
 	}
 </script>
 
-<div class="screen">
-	<slot />
-</div>
-<button id="switcher-tv" on:click={toggleSwitcherTV}>Turn on/off</button>
+{#if !hideWhenDone}
+	<div class="fixed top-0 right-0 h-screen w-screen bg-black z-50">
+		{#if shouldShowScreen}
+			<div class="screen">
+				{#if !showBlackScreen}
+					<slot />
+
+					{#if shouldShowNextButton}
+						<button
+							class="btn btn-secondary transition-opacity ease-in duration-500 opacity-0 appear"
+							id="switcher-tv"
+							on:click={handleClearScreen}>Let's go</button
+						>
+					{/if}
+				{/if}
+			</div>
+		{/if}
+	</div>
+{/if}
 
 <style>
+	.appear {
+		opacity: 1 !important;
+	}
+
 	button {
 		position: fixed;
-		right: 20px;
-		bottom: 20px;
-		padding: 20px;
-		font-weight: 700;
-		font-size: 16px;
-		z-index: 13;
+		right: 80px;
+		bottom: 80px;
 	}
 
 	.screen {
