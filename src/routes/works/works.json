@@ -1,6 +1,7 @@
 {
 	"projects": [
 		{
+			"id": "1",
 			"company": "E9",
 			"project": "Build you",
 			"description": "Build you is a platform that helps you build your dream house",
@@ -16,6 +17,7 @@
 			]
 		},
 		{
+			"id": "2",
 			"company": "E9",
 			"project": "CPAP",
 			"description": "Build you is a platform that helps you build your dream house",
@@ -31,6 +33,7 @@
 			]
 		},
 		{
+			"id": "3",
 			"company": "E9",
 			"project": "CPAP",
 			"description": "Build you is a platform that helps you build your dream house",
@@ -46,6 +49,7 @@
 			]
 		},
 		{
+			"id": "4",
 			"company": "E9",
 			"project": "CPAP",
 			"description": "Build you is a platform that helps you build your dream house",
@@ -61,6 +65,7 @@
 			]
 		},
 		{
+			"id": "5",
 			"company": "E9",
 			"project": "CPAP",
 			"description": "Build you is a platform that helps you build your dream house",

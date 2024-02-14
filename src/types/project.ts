@@ -3,6 +3,7 @@ export interface Works {
 }
 
 export interface Project {
+	id: string;
 	company: string;
 	project: string;
 	description: string;

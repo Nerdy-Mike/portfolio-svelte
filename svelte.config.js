@@ -19,7 +19,8 @@ const config = {
 			'@/types': 'src/types/*',
 			'@/components': 'src/components/*',
 			'@/stores': 'src/stores/*',
-			'@/lib': 'src/lib/*'
+			'@/lib': 'src/lib/*',
+			'@/assets': 'src/assets/*'
 		}
 	}
 };

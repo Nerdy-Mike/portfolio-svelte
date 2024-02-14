@@ -3,7 +3,6 @@
 
 	import ProjectCard from '@/components/common/ProjectCard.svelte';
 	import MainContainer from '@/components/common/Containers/MainContainer.svelte';
-	import ComponentContainer from '@/components/common/Containers/ComponentContainer.svelte';
 
 	import worksData from './works.json';
 
@@ -39,10 +38,6 @@
 </script>
 
 <MainContainer extraClass="card flex" withBg>
-	{scrollHeight}
-	{yTop}
-	{yScroll}
-	{offSet}
 	<div
 		class="flex flex-col h-screen w-full overflow-auto mb-6"
 		bind:this={box}
@@ -66,14 +61,14 @@
 				{/each}
 			</div>
 
-			<div class="flex items-start justify-center my-6 ">
+			<div class="flex items-start justify-center my-6">
 				<div class="h-full w-[10] rounded-xl bg-gray-100">
 					<div
 						class=" rounded-full bg-white"
 						style="height: {scrollHeight}px; width: 10px; border-radius: 12px; background: linear-gradient(180deg, rgba(73,144,249,1) 0%, rgba(11,99,229,1) 14%, rgba(11,99,229,1) 50%, rgba(11,99,229,1) 90%, rgba(105,159,239,1) 98%, rgba(255,255,255,1) 99.5%); position: relative;"
 					>
-						<div class="absolute bottom-[-22px] right-[-11px] rounded-full bg-white p-1">
-							<div class="h-6 w-6 rounded-full bg-accent-default" />
+						<div class="absolute bottom-[-18px] right-[-9px] rounded-full p-1">
+							<div class="h-5 w-5 rounded-full bg-info" />
 						</div>
 					</div>
 				</div>
@@ -92,7 +87,7 @@
 			</div>
 		</div>
 
-		<div class="flex 2xl:pb-20">
+		<div class="flex pb-20 2xl:pb-56">
 			<div />
 		</div>
 	</div>
@@ -104,16 +99,5 @@
 		grid-gap: 10px;
 		grid-template-columns: 1fr 100px 1fr;
 		align-items: stretch;
-	}
-
-	.box {
-		display: flex;
-		flex-direction: column;
-		width: 300px;
-		height: 200px;
-		overflow: auto;
-		resize: both;
-		margin-bottom: 20px;
-		white-space: nowrap;
 	}
 </style>
