@@ -6,7 +6,7 @@
 
 <div
 	class={cn(
-		`overflow-y-auto p-6 w-full h-full flex flex-col space-y-4 justify-center items-center ${extraClass}
+		`overflow-y-auto  w-full h-full flex flex-col space-y-4 justify-center items-center ${extraClass}
 		${withBg && 'transperentBg'}`
 	)}
 >

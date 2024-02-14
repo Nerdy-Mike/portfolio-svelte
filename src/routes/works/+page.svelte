@@ -24,7 +24,13 @@
 			offSet = box.clientHeight;
 		}
 
-		scrollHeight = yTop + (yTop / yScroll) * offSet;
+		let tempHeight = yTop + (yTop / yScroll) * offSet;
+
+		if (tempHeight > yScroll) {
+			scrollHeight = yScroll;
+		} else {
+			scrollHeight = tempHeight;
+		}
 	}
 
 	onMount(() => {
@@ -32,59 +38,64 @@
 	});
 </script>
 
-<MainContainer extraClass="card" withBg>
-	<div class="flex flex-col justify-center items-center">
-		<h1 class="text-4xl font-bold text-center">Works</h1>
-	</div>
-<div>
-
-</div>
+<MainContainer extraClass="card flex" withBg>
+	{scrollHeight}
+	{yTop}
+	{yScroll}
+	{offSet}
 	<div
-		class="wrapper h-screen w-full px-4 py-8 overflow-auto pb-10"
+		class="flex flex-col h-screen w-full overflow-auto mb-6"
 		bind:this={box}
 		on:scroll={parseScroll}
 		on:mousemove={parseScroll}
 	>
-	
-		<div class="flex h-full flex-col">
-			{#each worksData.projects as project, index (project)}
-				{#if index % 2 === 0}
-					<ProjectCard {project} />
-				{:else}
-					<div class="invisible">
-						<ProjectCard {project} />
-					</div>
-				{/if}
-			{/each}
+		<div class="flex flex-col justify-center items-center pt-10 pb-4">
+			<h1 class="text-4xl font-bold text-center">Works</h1>
+			<div />
 		</div>
+		<div class="wrapper px-4 py-8 pb-10">
+			<div class="flex h-full flex-col">
+				{#each worksData.projects as project, index (project)}
+					{#if index % 2 === 0}
+						<ProjectCard {project} />
+					{:else}
+						<div class="invisible">
+							<ProjectCard {project} />
+						</div>
+					{/if}
+				{/each}
+			</div>
 
-		<div class="flex items-start justify-center">
-			<div class="h-full w-[10] rounded-xl bg-gray-100">
-				<div
-					class=" rounded-full bg-white"
-					style="height: {scrollHeight}px; width: 10px; border-radius: 12px; background: linear-gradient(180deg, rgba(73,144,249,1) 0%, rgba(11,99,229,1) 14%, rgba(11,99,229,1) 50%, rgba(11,99,229,1) 90%, rgba(105,159,239,1) 98%, rgba(255,255,255,1) 99.5%); position: relative;"
-				>
-					<div class="absolute bottom-[-22px] right-[-11px] rounded-full bg-white p-1">
-						<div class="h-6 w-6 rounded-full bg-accent-default" />
+			<div class="flex items-start justify-center my-6 ">
+				<div class="h-full w-[10] rounded-xl bg-gray-100">
+					<div
+						class=" rounded-full bg-white"
+						style="height: {scrollHeight}px; width: 10px; border-radius: 12px; background: linear-gradient(180deg, rgba(73,144,249,1) 0%, rgba(11,99,229,1) 14%, rgba(11,99,229,1) 50%, rgba(11,99,229,1) 90%, rgba(105,159,239,1) 98%, rgba(255,255,255,1) 99.5%); position: relative;"
+					>
+						<div class="absolute bottom-[-22px] right-[-11px] rounded-full bg-white p-1">
+							<div class="h-6 w-6 rounded-full bg-accent-default" />
+						</div>
 					</div>
 				</div>
 			</div>
+
+			<div class="flex h-full flex-col">
+				{#each worksData.projects as project, index (project)}
+					{#if index % 2 !== 0}
+						<ProjectCard {project} />
+					{:else}
+						<div class="invisible">
+							<ProjectCard {project} />
+						</div>
+					{/if}
+				{/each}
+			</div>
 		</div>
 
-		<div class="flex h-full flex-col">
-			{#each worksData.projects as project, index (project)}
-				{#if index % 2 !== 0}
-					<ProjectCard {project} />
-				{:else}
-					<div class="invisible">
-						<ProjectCard {project} />
-					</div>
-				{/if}
-			{/each}
+		<div class="flex 2xl:pb-20">
+			<div />
 		</div>
 	</div>
-
-	
 </MainContainer>
 
 <style>
