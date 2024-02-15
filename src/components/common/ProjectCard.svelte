@@ -23,7 +23,7 @@
 	<div class="modal-box">
 		<div class="modal-action mt-0">
 			<button
-				className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 "
+				class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 "
 				on:keyup={closeModal}
 				on:click={closeModal}>✕</button
 			>

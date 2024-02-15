@@ -15,15 +15,15 @@ export const data: ISidebarItem[] = [
 	},
 	{
 		id: '2',
-		title: 'About',
-		icon: DocumentationIcon,
-		path: '/about'
-	},
-	{
-		id: '3',
 		title: 'Works',
 		icon: ArchivesIcon,
 		path: '/works'
+	},
+	{
+		id: '3',
+		title: 'Blog',
+		icon: DocumentationIcon,
+		path: '/blog'
 	},
 	{
 		id: '4',

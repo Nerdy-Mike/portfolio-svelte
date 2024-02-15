@@ -1,22 +1,58 @@
-<script>
-	let isModalOpen = false;
+<script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+	export let isModalOpen: boolean = false;
+	export let closeModal = () => {};
+
+	let cleanup: () => void;
+
+	onMount(() => {
+		function handleKeydown(event: KeyboardEvent) {
+			if (event.key === 'Escape') {
+				closeModal();
+			}
+		}
+		window.addEventListener('keydown', handleKeydown);
+		cleanup = () => {
+			window.removeEventListener('keydown', handleKeydown);
+		};
+	});
+
+	onDestroy(() => {
+		if (cleanup) cleanup();
+	});
 </script>
 
-<button class="btn modal-button" on:click={() => (isModalOpen = true)}>open modal</button>
+<input
+	type="checkbox"
+	id={Math.random().toString(36).substring(7)}
+	class="modal-toggle"
+	bind:checked={isModalOpen}
+/>
 
-<!-- Put this part before </body> tag -->
-<!-- 🔵 conditional `modal-open` class if true -->
-<div class="modal" class:modal-open={isModalOpen}>
-	<div class="modal-box">
-		<h3 class="font-bold text-lg">Congratulations random Interner user!</h3>
-		<p class="py-4">
-			You've been selected for a chance to get one year of subscription to use Wikipedia for free!
-		</p>
-		<div class="modal-action">
-			<button class="btn" on:click={() => (isModalOpen = false)}>Yay!</button>
+<div
+	class="modal"
+	on:click|self={closeModal}
+	on:keyup|self={closeModal}
+	on:keydown|self={closeModal}
+>
+	<div class="card bg-base-100 shadow-xl p-4">
+		<div class="modal-action mt-0">
+			<button class="btn btn-square" on:click={closeModal}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-6 w-6"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					><path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M6 18L18 6M6 6l12 12"
+					/></svg
+				>
+			</button>
 		</div>
+		<slot />
 	</div>
-	<form method="dialog" class="modal-backdrop">
-		<button>close</button>
-	</form>
 </div>

@@ -3,8 +3,6 @@
 
 	import Dock from './Dock.svelte';
 
-	import SidebarItems from './SidebarItems.svelte';
-
 	const style = {
 		mobileOrientation: {
 			start: 'left-0',

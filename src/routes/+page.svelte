@@ -5,7 +5,6 @@
 
 	import TechStack from '../components/TechStack/TechStack.svelte';
 
-	import Spirograph from '../components/FunStuffs/Spirograph/Spirograph.svelte';
 </script>
 
 <MainContainer>

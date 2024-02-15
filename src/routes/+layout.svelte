@@ -26,9 +26,9 @@
 
 <div class="flex bg-base-300 h-screen bg-image shake">
 	<!-- Turn off effect  -->
-	<TurnOff>
+	<!-- <TurnOff>
 		<WelcomeScreen />
-	</TurnOff>
+	</TurnOff> -->
 
 	<!-- Desktop sidebar -->
 	<aside class="z-10 flex-shrink-0 hidden pl-2 md:block">
