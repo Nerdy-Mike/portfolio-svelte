@@ -1,45 +1,54 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 
+	import type { ProjectsData } from '@/types/project';
+
 	import ProjectCard from '@/components/common/ProjectCard.svelte';
 	import MainContainer from '@/components/common/Containers/MainContainer.svelte';
 
-	import worksData from './works.json';
+	import CurlyArrow from '@/assets/icons/curly-arrow-64.png';
+
+	import data from './works.json';
 
 	let box: any;
-	let yTop = 0;
-	let yScroll = 0;
-	let offSet = 0;
-
 	let scrollHeight = 0;
+	let maxScrollHeight = 0;
+	let clientHeight = 0;
+
+	let scrollableElement: any;
+	let scrollableElementHeight = 0;
+
+	const worksData = data as ProjectsData;
 
 	function parseScroll() {
-		yTop = box.scrollTop;
-		if (yScroll === 0) {
-			yScroll = box.scrollHeight;
+		if (maxScrollHeight == 0) {
+			maxScrollHeight = box.scrollHeight;
 		}
-
-		if (offSet === 0) {
-			offSet = box.clientHeight;
+		if (clientHeight == 0) {
+			clientHeight = box.clientHeight;
 		}
+		if (scrollableElementHeight == 0) {
+			scrollableElementHeight = scrollableElement.clientHeight;
+		}
+		let boxSrollHeight = maxScrollHeight - clientHeight;
+		const elementScrollRatio = maxScrollHeight / boxSrollHeight;
 
-		let tempHeight = yTop + (yTop / yScroll) * offSet;
-
-		if (tempHeight > yScroll) {
-			scrollHeight = yScroll;
+		let temp = elementScrollRatio * box.scrollTop;
+		if (temp > scrollableElementHeight) {
+			scrollHeight = scrollableElementHeight;
 		} else {
-			scrollHeight = tempHeight;
+			scrollHeight = temp;
 		}
 	}
 
 	onMount(() => {
-		parseScroll();
+		window.addEventListener('scroll', parseScroll);
 	});
 </script>
 
 <MainContainer extraClass="card flex" withBg>
 	<div
-		class="flex flex-col h-screen w-full overflow-auto mb-6"
+		class="flex flex-col h-screen w-full overflow-auto my-6 relative"
 		bind:this={box}
 		on:scroll={parseScroll}
 		on:mousemove={parseScroll}
@@ -48,6 +57,14 @@
 			<h1 class="text-4xl font-bold text-center">Works</h1>
 			<div />
 		</div>
+		<div class="absolute top-4 left-16 z-10">
+			<!-- svelte-ignore a11y-img-redundant-alt -->
+			<div class="flex flex-col items-center justify-center">
+				<div class="w-40 text-center">Click on tab for details</div>
+				<img src={CurlyArrow} alt="Description of the image" class="rotate-180" />
+			</div>
+		</div>
+
 		<div class="wrapper px-4 py-8 pb-10">
 			<div class="flex h-full flex-col">
 				{#each worksData.projects as project, index (project)}
@@ -61,7 +78,7 @@
 				{/each}
 			</div>
 
-			<div class="flex items-start justify-center my-6">
+			<div class="flex items-start justify-center my-6" bind:this={scrollableElement}>
 				<div class="h-full w-[10] rounded-xl bg-gray-100">
 					<div
 						class=" rounded-full bg-white"

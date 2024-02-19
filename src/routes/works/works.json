@@ -4,81 +4,141 @@
 			"id": "1",
 			"company": "E9",
 			"project": "Build you",
-			"description": "Build you is a platform that helps you build your dream house",
-			"role": "Frontend Developer",
+			"type": "react-native",
+			"renderType": "mobile",
+			"description": "Buildyou is an app, a social, a community, your personal coach. Buildyou certifies your skills and helps you move from your present state to your desired state.",
+			"role": "Frontend Lead",
 			"teamSize": 5,
-			"techStack": "React, Redux, TypeScript, TailwindCSS",
-			"duration": "6 months",
-			"showCase": "https://e9.com",
+			"techStack": "React Native, Expo, FireBase, Jest, TypeScript, TailwindCSS",
+			"year": "2023",
+			"duration": "9 months",
+			"showCase": "https://www.buildyou.it/en/home-en/",
+			"appStore": "https://apps.apple.com/it/app/buildyou/id1589215290",
+			"playStore": "https://play.google.com/store/apps/details?id=com.buildyou.buildyou",
 			"responsibilities": [
-				"Worked on the frontend of the application",
-				"Implemented the UI/UX design",
-				"Worked with the backend team to integrate the frontend with the backend"
-			]
+				"Lead the frontend development team",
+				"Coordinate with backend developers and designers",
+				"Ensure timely delivery of features",
+				"Code review and quality assurance"
+			],
+			"folder": "projects/build-you"
 		},
 		{
 			"id": "2",
 			"company": "E9",
 			"project": "CPAP",
-			"description": "Build you is a platform that helps you build your dream house",
+			"type": "ecommerce",
+			"renderType": "web",
+			"description": "CPAP Discount Warehouse is Australia's leading provider of sleep apnea treatments.",
 			"role": "Frontend Developer",
 			"teamSize": 3,
-			"techStack": "React, Redux, TypeScript, TailwindCSS",
-			"duration": "6 months",
-			"showCase": "https://e9.com",
+			"techStack": "Shopify",
+			"duration": "1 months",
+			"year": "2023",
+			"showCase": "https://cpapdiscount.au/",
 			"responsibilities": [
-				"Worked on the frontend of the application",
-				"Implemented the UI/UX design",
-				"Worked with the backend team to integrate the frontend with the backend"
-			]
+				"Implement frontend features based on design mockups",
+				"Optimize web performance for better user experience",
+				"Optimize website performance for SEO"
+			],
+			"folder": "projects/cpap"
 		},
 		{
 			"id": "3",
 			"company": "E9",
-			"project": "CPAP",
-			"description": "Build you is a platform that helps you build your dream house",
-			"role": "Frontend Developer",
-			"teamSize": 3,
-			"techStack": "React, Redux, TypeScript, TailwindCSS",
-			"duration": "6 months",
-			"showCase": "https://e9.com",
+			"project": "Papaya",
+			"type": "internal-dashboard",
+			"renderType": "web",
+			"description": "Papaya focuses on reducing waiting time when processing insurance requests for Vietnamese citizens. By employing advanced technology, it optimizes the insurance claim process to provide the best experience to customers.",
+			"role": "Frontend Lead",
+			"teamSize": 1,
+			"techStack": "React, Redux, TypeScript, Ant Design, TailwindCSS",
+			"duration": "2 months",
+			"year": "2023",
+			"showCase": "https://www.papaya.asia/",
 			"responsibilities": [
-				"Worked on the frontend of the application",
-				"Implemented the UI/UX design",
-				"Worked with the backend team to integrate the frontend with the backend"
-			]
+				"Frontend development of the internal dashboard",
+				"Collaborate with backend team to integrate frontend with backend services"
+			],
+			"folder": "projects/papaya"
 		},
 		{
 			"id": "4",
 			"company": "E9",
-			"project": "CPAP",
-			"description": "Build you is a platform that helps you build your dream house",
-			"role": "Frontend Developer",
-			"teamSize": 3,
-			"techStack": "React, Redux, TypeScript, TailwindCSS",
-			"duration": "6 months",
-			"showCase": "https://e9.com",
+			"project": "Polly Property",
+			"type": "internal-tool",
+			"renderType": "web",
+			"description": "Polly Property help great property developers break new ground and create better projects.",
+			"role": "Frotend Developer",
+			"teamSize": 1,
+			"techStack": "React, TypeScript, TailwindCSS",
+			"duration": "2 months",
+			"year": "2023",
+			"showCase": "https://pollyproperty.com.au/",
 			"responsibilities": [
-				"Worked on the frontend of the application",
-				"Implemented the UI/UX design",
-				"Worked with the backend team to integrate the frontend with the backend"
-			]
+				"Develop frontend components for the internal tool",
+				"Ensure UI consistency and responsiveness"
+			],
+			"folder": "projects/polly-property"
 		},
 		{
 			"id": "5",
 			"company": "E9",
-			"project": "CPAP",
-			"description": "Build you is a platform that helps you build your dream house",
-			"role": "Frontend Developer",
-			"teamSize": 3,
-			"techStack": "React, Redux, TypeScript, TailwindCSS",
-			"duration": "6 months",
-			"showCase": "https://e9.com",
+			"project": "Zoodoo",
+			"type": "landing-page",
+			"renderType": "web",
+			"description": "Zoodoo is a wildlife park in Dalat, Vietnam. It is home to the largest collection of primates from over the world.",
+			"role": "Solo FE Developer",
+			"teamSize": 1,
+			"techStack": "NextJS, Contentful, TypeScript, TailwindCSS",
+			"duration": "1 months",
+			"year": "2023",
+			"showCase": "https://www.zoodoodalat.com/",
 			"responsibilities": [
-				"Worked on the frontend of the application",
-				"Implemented the UI/UX design",
-				"Worked with the backend team to integrate the frontend with the backend"
-			]
+				"Design and develop the landing page",
+				"Ensure cross-browser compatibility",
+				"Optimize website performance for SEO"
+			],
+			"folder": "projects/zoodoo"
+		},
+		{
+			"id": "6",
+			"company": "E9",
+			"project": "Start and Go",
+			"type": "landing-page",
+			"renderType": "web",
+			"description": "Start and Go is Digital Marketing Agency in Italy. We help businesses grow by creating and implementing effective digital marketing strategies.",
+			"role": "Solo FE Developer",
+			"teamSize": 1,
+			"techStack": "NextJS, TypeScript, TailwindCSS",
+			"duration": "1 months",
+			"year": "2023",
+			"showCase": "https://www.startegois.com/",
+			"responsibilities": [
+				"Develop frontend for digital marketing strategies",
+				"Optimize website performance for SEO"
+			],
+			"folder": "projects/start-and-go"
+		},
+		{
+			"id": "7",
+			"company": "CMC",
+			"project": "Dulux",
+			"type": "ecommerce",
+			"renderType": "web",
+			"description": "Dulux offers a wide range of paints for various purposes including interior and exterior walls, wood, metal, and specialty surfaces. The brand is known for its quality, durability, and extensive color palette options, making it popular among homeowners, decorators, and professionals alike.",
+			"role": "Frontend Developer",
+			"teamSize": 16,
+			"techStack": "NextJS, Contentful, Jest, TypeScript, TailwindCSS",
+			"duration": "6 months",
+			"year": "2023",
+			"showCase": "https://www.dulux.com.au/",
+			"responsibilities": [
+				"Collaborate with designers to implement UI/UX features",
+				"Optimize web performance for large-scale ecommerce",
+				"Optimize website performance for SEO"
+			],
+			"folder": "projects/dulux"
 		}
 	]
 }

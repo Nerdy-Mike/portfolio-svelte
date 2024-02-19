@@ -116,7 +116,7 @@
 	<div class="absolute bottom-4 right-16 z-10">
 		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<img src={CurlyArrow} alt="Description of the image" class="" />
-		<div class="w-40">My tech stack and why it doesn't matter</div>
+		<div class="w-40">My tech stack</div>
 	</div>
 </div>
 

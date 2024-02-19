@@ -2,6 +2,7 @@
 	import { onDestroy } from 'svelte';
 	import { tweened } from 'svelte/motion';
 	import * as easingFns from 'svelte/easing';
+	
 
 	export let quote: string;
 	export let author: string;
@@ -9,11 +10,11 @@
 	let easingName = 'linear';
 	let positionStore;
 	let position = 0;
-	let cleanup = null;
+	let cleanup: any = null;
 
 	let authorPositionStore;
 	let authorPosition = 0;
-	let authorCleanup = null;
+	let authorCleanup: any = null;
 
 	onDestroy(() => {
 		if (cleanup) cleanup();
@@ -51,9 +52,6 @@
 </div>
 
 <style>
-	h1 {
-		font-size: 2.3rem;
-	}
 	.cursor {
 		display: inline-block;
 		width: 8px;
