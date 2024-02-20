@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import Saos from 'saos';
+
 	import type { Project } from '@/types/project';
 	import cn from '@/lib/tailwind-merged';
 
@@ -97,8 +99,31 @@
 						rel="noopener noreferrer">{project.showCase}</a
 					>
 				</p>
+
+				{#if project.renderType == 'mobile'}
+					<p class="mt-2 text-neutral-content">
+						<span class="font-semibold text-secondary">Apple Store:</span>
+						<a
+							href={project.appStore}
+							class=" hover:underline text-info"
+							target="_blank"
+							rel="noopener noreferrer">{project.appStore}</a
+						>
+					</p>
+
+					<p class="mt-2 text-neutral-content">
+						<span class="font-semibold text-secondary">Play Store:</span>
+						<a
+							href={project.playStore}
+							class=" hover:underline text-info"
+							target="_blank"
+							rel="noopener noreferrer">{project.playStore}</a
+						>
+					</p>
+				{/if}
+
 				<p class="mt-2 font-semibold text-secondary">Responsibilities:</p>
-				<ul>
+				<ul class="list-disc pl-4">
 					{#each project.responsibilities as responsibility (responsibility)}
 						<li>{responsibility}</li>
 					{/each}
@@ -128,49 +153,66 @@
 	</div>
 </div>
 
-<div
-	class="card bg-base-100 max-w-md mx-auto rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3 hover:scale-[102%] cursor-pointer transition-transform duration-200 ease-in-out"
-	on:click={openModal}
-	on:keyup={openModal}
->
-	<div class="md:flex">
-		<div class="md:flex-shrink-0">
-			<!-- You can put an image here with <img src={project.image} alt={project.name} /> -->
-		</div>
-		<div class="p-8">
-			<div class="flex flex-row w-full justify-between items-center">
-				<div class="uppercase tracking-wide text-sm text-primary font-semibold">
-					{project.company}
+<Saos animation={' slide-top 0.5s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'} once>
+	<div
+		class="card bg-base-100 max-w-md mx-auto rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3 hover:scale-[102%] cursor-pointer transition-transform duration-200 ease-in-out"
+		on:click={openModal}
+		on:keyup={openModal}
+	>
+		<div class="md:flex">
+			<div class="md:flex-shrink-0">
+				<!-- You can put an image here with <img src={project.image} alt={project.name} /> -->
+			</div>
+			<div class="p-8">
+				<div class="flex flex-row w-full justify-between items-center">
+					<div class="uppercase tracking-wide text-sm text-primary font-semibold">
+						{project.company}
+					</div>
+					<p class="text-sm font-semibold text-neutral-content">
+						{project.year}
+					</p>
 				</div>
-				<p class="text-sm font-semibold text-neutral-content">
-					{project.year}
+				<p class="block mt-1 text-lg leading-tight card-title text-accent hover:underline">
+					{project.project}
+				</p>
+				<p class="mt-2 text-neutral-content italic">{project.description}</p>
+				<p class="mt-2 text-neutral-content">
+					<span class="font-semibold text-secondary">Role:</span>
+					{project.role}
+				</p>
+				<p class="mt-2 text-neutral-content">
+					<span class="font-semibold text-secondary">Team size:</span>
+					{project.teamSize}
+				</p>
+				<p class="mt-2 text-neutral-content">
+					<span class="font-semibold text-secondary">Tech stack:</span>
+					{project.techStack}
+				</p>
+				<p class="mt-2 text-neutral-content">
+					<span class="font-semibold text-secondary">Show case:</span>
+					<a
+						href={project.showCase}
+						class=" hover:underline text-info"
+						target="_blank"
+						rel="noopener noreferrer">{project.showCase}</a
+					>
 				</p>
 			</div>
-			<p class="block mt-1 text-lg leading-tight card-title text-accent hover:underline">
-				{project.project}
-			</p>
-			<p class="mt-2 text-neutral-content italic">{project.description}</p>
-			<p class="mt-2 text-neutral-content">
-				<span class="font-semibold text-secondary">Role:</span>
-				{project.role}
-			</p>
-			<p class="mt-2 text-neutral-content">
-				<span class="font-semibold text-secondary">Team size:</span>
-				{project.teamSize}
-			</p>
-			<p class="mt-2 text-neutral-content">
-				<span class="font-semibold text-secondary">Tech stack:</span>
-				{project.techStack}
-			</p>
-			<p class="mt-2 text-neutral-content">
-				<span class="font-semibold text-secondary">Show case:</span>
-				<a
-					href={project.showCase}
-					class=" hover:underline text-info"
-					target="_blank"
-					rel="noopener noreferrer">{project.showCase}</a
-				>
-			</p>
 		</div>
 	</div>
-</div>
+</Saos>
+
+<style>
+	@keyframes -global-slide-top {
+		0% {
+			-webkit-transform: translateY(100px);
+			transform: translateY(100px);
+			opacity: 0;
+		}
+		100% {
+			-webkit-transform: translateY(0px);
+			transform: translateY(0px);
+			opacity: 1;
+		}
+	}
+</style>

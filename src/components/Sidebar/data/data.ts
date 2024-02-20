@@ -3,6 +3,7 @@ import StatusIcon from '../images/StatusIcon.svelte';
 import CreditsIcon from '../images/CreditsIcon.svelte';
 import ArchivesIcon from '../images/ArchivesIcon.svelte';
 import DocumentationIcon from '../images/DocumentationIcon.svelte';
+import ChessIcon from '../images/ChessIcon.svelte';
 
 import type { ISidebarItem } from './type';
 
@@ -25,20 +26,20 @@ export const data: ISidebarItem[] = [
 		icon: DocumentationIcon,
 		path: '/blog'
 	},
-	{
-		id: '4',
-		title: 'Personal Projects',
-		icon: CreditsIcon,
-		path: '/personal'
-	},
 	// {
-	// 	id: 5,
-	// 	title: 'Newest blogs',
-	// 	icon: SettingsIcon,
-	// 	path: '/blogs'
+	// 	id: '4',
+	// 	title: 'Personal Projects',
+	// 	icon: CreditsIcon,
+	// 	path: '/personal'
 	// },
 	{
 		id: '5',
+		title: 'Chess Analysis',
+		icon: ChessIcon,
+		path: '/chess'
+	},
+	{
+		id: '6',
 		title: 'Contact',
 		icon: StatusIcon,
 		path: '/contact'

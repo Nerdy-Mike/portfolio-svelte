@@ -57,13 +57,6 @@
 			<h1 class="text-4xl font-bold text-center">Works</h1>
 			<div />
 		</div>
-		<div class="absolute top-4 left-16 z-10">
-			<!-- svelte-ignore a11y-img-redundant-alt -->
-			<div class="flex flex-col items-center justify-center">
-				<div class="w-40 text-center">Click on tab for details</div>
-				<img src={CurlyArrow} alt="Description of the image" class="rotate-180" />
-			</div>
-		</div>
 
 		<div class="wrapper px-4 py-8 pb-10">
 			<div class="flex h-full flex-col">
@@ -106,6 +99,13 @@
 
 		<div class="flex pb-20 2xl:pb-56">
 			<div />
+		</div>
+	</div>
+	<div class="absolute bottom-4 right-16 z-10">
+		<!-- svelte-ignore a11y-img-redundant-alt -->
+		<div class="flex flex-col items-center justify-center">
+			<img src={CurlyArrow} alt="Description of the image" class="" />
+			<div class="w-40 text-center">Click on tab for details</div>
 		</div>
 	</div>
 </MainContainer>

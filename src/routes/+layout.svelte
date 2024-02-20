@@ -24,6 +24,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Michael Le</title>
+</svelte:head>
+
 <div class="flex bg-base-300 h-screen bg-image shake">
 	<!-- Turn off effect  -->
 	<!-- <TurnOff>

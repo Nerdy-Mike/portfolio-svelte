@@ -15,8 +15,8 @@
 <ul class="md:pl-1 h-full flex flex-col justify-center py-8">
 	{#each data as item (item.title)}
 		<li>
-			<a class={style.link} href={item.link}>
-				<div class={`p-2 ${item.link === $page.url.pathname ? style.active : ''}`}>
+			<a class={style.link} href={item.path}>
+				<div class={`p-2 ${item.path === $page.url.pathname ? style.active : ''}`}>
 					<span><svelte:component this={item.icon} /></span>
 				</div>
 				<span class={`${style.title} ${$sidebarOpen ? style.open : style.close}`}>

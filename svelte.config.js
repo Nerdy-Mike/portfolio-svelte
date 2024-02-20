@@ -16,11 +16,14 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			'@/types': 'src/types/*',
-			'@/components': 'src/components/*',
-			'@/stores': 'src/stores/*',
 			'@/lib': 'src/lib/*',
-			'@/assets': 'src/assets/*'
+			'@/utils': 'src/utils/*',
+			'@/types': 'src/types/*',
+			'@/routes': 'src/routes/*',
+			'@/assets': 'src/assets/*',
+			'@/stores': 'src/stores/*',
+			'@/services': 'src/services/*',
+			'@/components': 'src/components/*'
 		}
 	}
 };
