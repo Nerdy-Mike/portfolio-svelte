@@ -6,8 +6,12 @@ const openSidebar = () => {
 	sidebarOpen.update(() => true);
 };
 
+const toggleSidebar = () => {
+	sidebarOpen.update((value) => !value);
+};
+
 const closeSidebar = () => {
 	sidebarOpen.update(() => false);
 };
 
-export { sidebarOpen, openSidebar, closeSidebar };
+export { sidebarOpen, openSidebar, closeSidebar, toggleSidebar };

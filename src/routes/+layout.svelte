@@ -1,18 +1,22 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import { browser } from '$app/environment';
-	import type { SubmitFunction } from '@sveltejs/kit';
-	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
-	import { closeSidebar, sidebarOpen } from '../stores/side-bar-store';
+	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
+	import { THEMES, theme, getTheme } from '@/stores/theme-store';
+
+	import { closeSidebar, sidebarOpen } from '@/stores/side-bar-store';
 
 	import Overlay from '@/components/Overlay.svelte';
 	import Sidebar from '@/components/Sidebar/Sidebar.svelte';
 	import TopBar from '@/components/Topbar/TopBar.svelte';
-	import TurnOff from '@/components/FunStuffs/TurnOff/TurnOff.svelte';
+
 	import WelcomeScreen from '@/components/FunStuffs/TurnOff/WelcomeScreen.svelte';
+	import TurnOff from '@/components/FunStuffs/TurnOff/TurnOff.svelte';
 
 	import '../app.postcss';
+
+	let bgImageClass = '';
 
 	if (browser) {
 		page.subscribe(() => {
@@ -22,17 +26,46 @@
 			}
 		});
 	}
+
+	onMount(() => {
+		const localTheme = getTheme();
+		if (localTheme) {
+			theme.set(localTheme);
+		}
+	});
+
+	$: {
+		switch ($theme) {
+			case THEMES[0]:
+				bgImageClass = 'bg-image-space';
+				break;
+			case THEMES[1]:
+				bgImageClass = 'bg-image-forest';
+				break;
+			case THEMES[2]:
+				bgImageClass = 'bg-image-aqua';
+				break;
+
+			default:
+				bgImageClass = 'bg-base-300';
+		}
+	}
 </script>
 
 <svelte:head>
 	<title>Michael Le</title>
 </svelte:head>
 
-<div class="flex bg-base-300 h-screen bg-image shake">
+<div class={`flex bg-base-300 h-screen ${bgImageClass}`}>
 	<!-- Turn off effect  -->
-	<!-- <TurnOff>
+	<TurnOff>
 		<WelcomeScreen />
-	</TurnOff> -->
+	</TurnOff>
+
+	<!-- Mobile sidebar -->
+	<aside class="z-10 flex-shrink-0 block md:hidden">
+		<Sidebar mobileOrientation="start" />
+	</aside>
 
 	<!-- Desktop sidebar -->
 	<aside class="z-10 flex-shrink-0 hidden pl-2 md:block">
@@ -49,8 +82,19 @@
 </div>
 
 <style>
-	.bg-image {
+	.bg-image-space {
 		background-image: url('../assets/backgrounds/space.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+	.bg-image-forest {
+		background-image: url('../assets/backgrounds/forest.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	.bg-image-aqua {
+		background-image: url('../assets/backgrounds/ocean.jpg');
 		background-size: cover;
 		background-position: center;
 	}

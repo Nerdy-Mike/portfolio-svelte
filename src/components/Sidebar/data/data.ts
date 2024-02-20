@@ -34,7 +34,7 @@ export const data: ISidebarItem[] = [
 	// },
 	{
 		id: '5',
-		title: 'Chess Analysis',
+		title: 'Chess',
 		icon: ChessIcon,
 		path: '/chess'
 	},

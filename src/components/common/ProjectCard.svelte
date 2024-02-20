@@ -19,6 +19,12 @@
 	function closeModal() {
 		isModalOpen = false;
 	}
+	
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			closeModal();
+		}
+	}
 
 	async function getImagesFromFolder(path: string) {
 		try {
@@ -44,12 +50,13 @@
 	}
 	onMount(() => {
 		getImagesFromFolder(project.folder);
+		window.addEventListener('keydown', handleKeyDown);
 	});
 </script>
 
 <input type="checkbox" id={project.id} class="modal-toggle" bind:checked={isModalOpen} />
 <div class="modal w-full" on:click|self={closeModal} on:keyup|self={closeModal}>
-	<div class={cn(`modal-box `, project.renderType == 'web' ? 'max-w-6xl' : 'max-w-4xl')}>
+	<div class={cn(`modal-box relative`, project.renderType == 'web' ? 'max-w-6xl' : 'max-w-4xl')}>
 		<div class="modal-action mt-0 mb-6">
 			<button
 				class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
@@ -57,7 +64,7 @@
 				on:click={closeModal}>✕</button
 			>
 		</div>
-		<div class="grid grid-cols-2 gap-x-6">
+		<div class="flex flex-col md:grid md:grid-cols-2 gap-x-6">
 			<div class="col-span-1 p-4 w-full">
 				<div class="flex flex-row w-full justify-between items-center">
 					<div class="uppercase tracking-wide text-md text-primary font-semibold">
@@ -160,9 +167,6 @@
 		on:keyup={openModal}
 	>
 		<div class="md:flex">
-			<div class="md:flex-shrink-0">
-				<!-- You can put an image here with <img src={project.image} alt={project.name} /> -->
-			</div>
 			<div class="p-8">
 				<div class="flex flex-row w-full justify-between items-center">
 					<div class="uppercase tracking-wide text-sm text-primary font-semibold">

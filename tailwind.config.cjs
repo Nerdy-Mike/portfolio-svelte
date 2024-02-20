@@ -22,7 +22,6 @@ const config = {
 			}
 		}
 	},
-
 	plugins: [require('daisyui')]
 };
 

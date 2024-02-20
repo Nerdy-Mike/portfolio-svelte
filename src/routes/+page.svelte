@@ -5,67 +5,74 @@
 
 	import TechStack from '../components/TechStack/TechStack.svelte';
 
+	import { MailIcon, GithubIcon, LinkedinIcon } from 'svelte-feather-icons';
+
+	const siteMetadata = {
+		email: 'michaelle.dev@gmail.com',
+		github: 'https://github.com/Nerdy-Mike',
+		linkedin: 'https://www.linkedin.com/in/michael-le-0b2a44232/'
+	};
 </script>
 
 <MainContainer>
 	<Grid2ColContainer>
-		<ComponentContainer slot="left" noBackground extraClass="w-full h-full">
+		<ComponentContainer slot="left" noBackground extraClass=" w-full h-full">
 			<section class="flex flex-col justify-start items-center w-full h-full relative">
-				<div class="flex flex-col justify-center items-center h-full -mt-20">
-					<h1 class="text-xl tracking-wide text-gray-800 dark:text-gray-200 lg:text-4xl">
+				<div class="flex flex-col justify-center items-center h-full mt-10">
+					<h1 class=" tracking-wide text-info text-4xl">
 						Hi, I'm
 						{' '}
 						<span class="font-semibold">Michael</span>
 					</h1>
-					<p class="mt-4 mx-20 text-center text-gray-600 dark:text-gray-300 text-lg">
-						A junior software engineer based in Adelaide, currently doing intership at Fivecast. I'm
-						a huge fan of the web and its architecture.
-					</p>
-				</div>
+					<div class="flex flex-col justify-start items-start">
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
+							👨‍💻 A Full-stack Software Engineer based in Ho Chi Minh, Vietnam
+						</p>
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
+							🚀 I'm passionate about building software that solves real-world problems and provides
+							value to the end-users
+						</p>
 
-				<!-- <div class="">
-						<div class="mb-3 flex space-x-4 pt-4">
-							<a
-								class="text-sm"
-								target="_blank"
-								rel="noopener noreferrer"
-								href={`mailto:${siteMetadata.email}`}
-							>
-								<span class="sr-only">Git</span>
-								<div
-									class="fill-current text-gray-700 dark:text-gray-400 ransition dark:hover:text-gray-200 hover:text-blue-400 h-8 w-8"
-								>
-									<Mail />
-								</div>
-							</a>
-							<a
-								class="text-sm"
-								target="_blank"
-								rel="noopener noreferrer"
-								href={siteMetadata.github}
-							>
-								<span class="sr-only">Mail</span>
-								<div
-									class="fill-current text-gray-700 dark:text-gray-400 ransition dark:hover:text-gray-200 hover:text-blue-400 h-8 w-8"
-								>
-									<Github />
-								</div>
-							</a>
-							<a
-								class="text-sm"
-								target="_blank"
-								rel="noopener noreferrer"
-								href={siteMetadata.linkedin}
-							>
-								<span class="sr-only">Linkedin</span>
-								<div
-									class="fill-current text-gray-700 dark:text-gray-400 ransition dark:hover:text-gray-200 hover:text-blue-400 h-8 w-8"
-								>
-									<Linkedin />
-								</div>
-							</a>
-						</div>
-					</div> -->
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
+							👨‍🎓 Graduated from the University of Adelaide with Computer Science degree
+						</p>
+
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
+							📫 Feel free to reach out to me for any project or collaboration
+						</p>
+					</div>
+
+					<div class="my-3 flex space-x-8 pt-4">
+						<a
+							class="text-sm"
+							target="_blank"
+							rel="noopener noreferrer"
+							href={`mailto:${siteMetadata.email}`}
+						>
+							<span class="sr-only">Git</span>
+							<div class="fill-current text-neutral-content transition hover:text-blue-200 h-8 w-8">
+								<MailIcon size="36" />
+							</div>
+						</a>
+						<a class="text-sm" target="_blank" rel="noopener noreferrer" href={siteMetadata.github}>
+							<span class="sr-only">Mail</span>
+							<div class="fill-current text-neutral-content transition hover:text-blue-200 h-8 w-8">
+								<GithubIcon size="36" />
+							</div>
+						</a>
+						<a
+							class="text-sm"
+							target="_blank"
+							rel="noopener noreferrer"
+							href={siteMetadata.linkedin}
+						>
+							<span class="sr-only">Linkedin</span>
+							<div class="fill-current text-neutral-content transition hover:text-blue-200 h-8 w-8">
+								<LinkedinIcon size="36" />
+							</div>
+						</a>
+					</div>
+				</div>
 			</section>
 		</ComponentContainer>
 

@@ -3,6 +3,9 @@
 	import jQuery from 'jquery';
 	import { onMount } from 'svelte';
 
+	// http://htmlspirograph.com/?ref=dailydev#0,50,0,1,1,-0.014285714285714285,23,-260,345,-3.4,73,368,0.11666666666666667,145,387,35,56,0,1,203
+	// http://htmlspirograph.com/?ref=dailydev#0,50,0,1,3,1.0600000000000003,0,-480,944,2.0999999999999996,100,790,-3.7,60,990,45,0,0,1,177
+
 	var M = 1,
 		handlrot = 0,
 		handrrot = 0,
@@ -28,13 +31,16 @@ ext							__Ext
 							__Erota
 							__Earm,
 */
+
+// __Centerx
+// __Centery
 	var __Crot = 0,
-		__Crota = -21.91999999999945,
+		__Crota = -0.014285714285714285,
 		__HBx = 62,
 		__HBy = -403,
 		__Hdist = 937,
 		__Lrot = 0,
-		__Lrota = 6842.115999999992,
+		__Lrota = 682.115999999992,
 		__Larm1 = 93,
 		__Larm2 = 687,
 		__Rrot = 0,

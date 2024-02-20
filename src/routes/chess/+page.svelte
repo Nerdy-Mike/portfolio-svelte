@@ -24,7 +24,7 @@
 		<ComponentContainer
 			slot="left"
 			noBackground
-			extraClass="w-full h-full flex items-center justify-center"
+			extraClass="w-full h-full flex items-center justify-center pb-10"
 		>
 			<ChessBoard />
 		</ComponentContainer>

@@ -3,30 +3,28 @@
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
 
-	import { openSidebar } from '../../stores/side-bar-store';
+	import { MenuIcon } from 'svelte-feather-icons';
 
-	const themes = [
-		'dark', // night sky
-		'synthwave', // retro - done
-		'forest', // forest - done
-		'aqua', // ocean
-		'night' // city - - manhattan at night
-	];
+	import { THEMES, setTheme } from '@/stores/theme-store';
+
+	import { toggleSidebar } from '../../stores/side-bar-store';
+	import { onMount } from 'svelte';
 
 	const submitUpdateTheme: SubmitFunction = ({ action }) => {
 		const theme = action.searchParams.get('theme');
 
 		if (theme) {
 			document.documentElement.setAttribute('data-theme', theme);
+			setTheme(theme as any);
 		}
 	};
 </script>
 
 <header class="h-16 relative w-full z-10 flex flex-row justify-between items-center">
-	<div class="flex h-full w-full bg-black">
-		<a class="" href="/">
-			<svg width="300" height="75" viewBox="0 0 400 45" class="looka-1j8o68f"
-				><defs id="SvgjsDefs2762" /><g
+	<div class="flex h-full w-full">
+		<a class="pl-6" href="/">
+			<svg width="300" height="75" viewBox="0 0 400 45" class="looka-1j8o68f">
+				<defs id="SvgjsDefs2762" /><g
 					id="SvgjsG2763"
 					transform="matrix(0.9584939556746689,0,0,0.9584939556746689,0.4680319945245631,-10.858778477227494)"
 					fill="#FFF"
@@ -38,13 +36,13 @@
 		</a>
 	</div>
 
-	<div class="flex-none">
-		<ul class="menu menu-horizontal px-1 z-50">
+	<div class="flex-none flex flex-row">
+		<ul class="hidden lg:flex menu menu-horizontal px-1 z-50">
 			<li>
-				<button> Set Theme 🎨 </button>
+				<button class="text-neutral-content"> Set Theme 🎨 </button>
 				<ul class="p-2 bg-base-100 w-full max-h-96 overflow-y-scroll">
 					<form method="POST" use:enhance={submitUpdateTheme}>
-						{#each themes as theme}
+						{#each THEMES as theme}
 							<li>
 								<button formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}"
 									>{theme}</button
@@ -55,5 +53,10 @@
 				</ul>
 			</li>
 		</ul>
+		<div class="flex lg:hidden">
+			<button class="p-2" aria-label="Open Sidebar" on:click={() => toggleSidebar()}>
+				<MenuIcon size="40" />
+			</button>
+		</div>
 	</div>
 </header>

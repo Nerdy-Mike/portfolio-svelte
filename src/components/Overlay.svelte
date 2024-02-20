@@ -7,6 +7,6 @@
 <button
 	on:click={closeSidebar}
 	class={$sidebarOpen
-		? 'bg-black fixed h-screen left-0 opacity-40 top-0 w-screen z-30 lg:hidden'
+		? 'bg-black fixed h-screen left-0 opacity-0 top-0 w-screen z-[4] lg:hidden'
 		: ''}
 />

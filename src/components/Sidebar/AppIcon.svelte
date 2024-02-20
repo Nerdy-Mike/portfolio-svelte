@@ -7,8 +7,6 @@
 
 	import type { ISidebarItem } from './data/type';
 
-	import cn from '../../lib/tailwind-merged';
-
 	export let mouseY: any;
 	export let item: ISidebarItem;
 	let shouldAnimate = false; // Define shouldAnimate
@@ -43,7 +41,7 @@
 
 	function onMouseEnter(
 		e: MouseEvent & {
-			currentTarget: EventTarget & HTMLUListElement;
+			currentTarget: EventTarget & HTMLDivElement;
 		}
 	) {
 		mouseY.set(e.pageY);
@@ -70,11 +68,14 @@ out:fly={{ x: -20, y: 0, opacity: 0, easing: quintOut, duration: 500 }} -->
 	>
 		<a class={style.path} href={item.path} aria-label={item.title}>
 			<svelte:component this={item.icon} {sizePx} className="h-10 w-10" />
+			<p class="block lg:hidden pl-2">
+				{item.title}
+			</p>
 		</a>
 
 		{#if shouldAnimate}
 			<div
-				class="absolute top-0 left-20 kbd text-primary-content text-lg bg-base-100 z-50"
+				class="absolute top-0 left-20 kbd text-primary-content text-lg bg-base-100 z-50 hidden lg:flex lg:items-center lg:justify-center"
 				style="top: {topPositionPx}px"
 				transition:fly={{
 					duration: 500,

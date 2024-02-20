@@ -35,7 +35,7 @@
 		// get the side to move from the fen
 		chess.load(slectedFen);
 		sideToMove = chess.turn() === 'w' ? 'white' : 'black';
-    console.log(sideToMove)
+		console.log(sideToMove);
 		config = {
 			movable: {
 				color: sideToMove as ColorConfig,
@@ -49,15 +49,11 @@
 <div
 	class=" w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[600px] xl:h-[600px] 2xl:w-[700px] 2xl:h-[700px] 3xl:w-[800px] 3xl:h-[800px] 4xl:w-[1000px] 4xl:h-[1000px]"
 >
-	<div>
-		<div class={cn('text-center text-lg font-bold', sideToMove == 'black' && 'text-primary')}>
-			{$selectedChessGame?.user1.username}
-		</div>
+	<div class={cn('text-center text-lg font-bold', sideToMove == 'black' && 'text-primary')}>
+		{$selectedChessGame?.user1.username || 'Anonymous'}
 	</div>
 	<Chessground bind:this={chessground} fen={slectedFen} {config} />
-	<div>
-		<div class={cn('text-center text-lg font-bold', sideToMove == 'white' && 'text-primary')}>
-			{$selectedChessGame?.user2.username}
-		</div>
+	<div class={cn('text-center text-lg font-bold', sideToMove == 'white' && 'text-primary')}>
+		{$selectedChessGame?.user2.username || 'Anonymous'}
 	</div>
 </div>
