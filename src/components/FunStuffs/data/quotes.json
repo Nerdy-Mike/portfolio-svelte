@@ -1,12 +1,45 @@
 {
 	"quotes": [
 		{
-			"content": "This is a single-line quote.",
-			"author": "John Doe"
+			"quote": "The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.",
+			"author": "Carl Sagan"
 		},
 		{
-			"content": "This is a multi-line quote.\nIt has multiple lines of content.",
-			"author": "Jane Smith"
+			"quote": "He who cannot obey himself will be commanded. That is the nature of living creatures.",
+			"author": "Friedrich Nietzsche"
+		},
+		{
+			"quote": "The mind governed by the flesh is death, but the mind governed by the Spirit is life and peace.",
+			"author": "Roman 8:11"
+		},
+
+		{
+			"quote": "Throughout space, there is energy. Is this energy static or kinetic? If static, our hopes are in vain. If kinetic and we know for certain it is, then it is a mere question of time, when men will succeed in attaching their machinery to the very wheel work of nature. Many generations may pass, but in time our machinery will be driven by a power obtainable at any point in the universe.",
+			"author": "Tesla"
+		},
+		{
+			"quote": "Those who have a 'why' to live, can bear with almost any 'how'.",
+			"author": "Viktor E. Frankl"
+		},
+		{
+			"quote": "When we are no longer able to change a situation, we are challenged to change ourselves.",
+			"author": "Viktor E. Frankl"
+		},
+		{
+			"quote": "It is not freedom from conditions, but it is freedom to take a stand toward the conditions.",
+			"author": "Viktor E. Frankl"
+		},
+		{
+			"quote": "Avoid the crowd. Do your own thinking independently. Be the chess player, not the chess piece.",
+			"author": "Ralph Charell"
+		},
+		{
+			"quote": "Every chess master was once a beginner.",
+			"author": "Irving Chernev"
+		},
+		{
+			"quote": "Do not go gentle into that good night. Rage, rage against the dying of the light.",
+			"author": "D. Thomas"
 		}
 	]
 }

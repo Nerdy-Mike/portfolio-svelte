@@ -35,7 +35,6 @@
 		// get the side to move from the fen
 		chess.load(slectedFen);
 		sideToMove = chess.turn() === 'w' ? 'white' : 'black';
-		console.log(sideToMove);
 		config = {
 			movable: {
 				color: sideToMove as ColorConfig,

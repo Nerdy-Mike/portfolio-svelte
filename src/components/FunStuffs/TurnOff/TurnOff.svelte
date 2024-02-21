@@ -4,7 +4,7 @@
 
 	let isTurnedOn = true;
 	let timeline: any;
-	let showBlackScreen = null;
+	let showBlackScreen: boolean | null = null;
 	let shouldShowScreen = true;
 	let hideWhenDone = false;
 	let shouldShowNextButton = false;

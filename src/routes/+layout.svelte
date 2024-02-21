@@ -11,8 +11,9 @@
 	import Sidebar from '@/components/Sidebar/Sidebar.svelte';
 	import TopBar from '@/components/Topbar/TopBar.svelte';
 
-	import WelcomeScreen from '@/components/FunStuffs/TurnOff/WelcomeScreen.svelte';
 	import TurnOff from '@/components/FunStuffs/TurnOff/TurnOff.svelte';
+	import WelcomeScreen from '@/components/FunStuffs/TurnOff/WelcomeScreen.svelte';
+	import TurnOffChangeTheme from '@/components/FunStuffs/TurnOff/TurnOffChangeTheme.svelte';
 
 	import '../app.postcss';
 
@@ -37,13 +38,19 @@
 	$: {
 		switch ($theme) {
 			case THEMES[0]:
-				bgImageClass = 'bg-image-space';
+				setTimeout(() => {
+					bgImageClass = 'bg-image-space';
+				}, 1000);
 				break;
 			case THEMES[1]:
-				bgImageClass = 'bg-image-forest';
+				setTimeout(() => {
+					bgImageClass = 'bg-image-forest';
+				}, 1000);
 				break;
 			case THEMES[2]:
-				bgImageClass = 'bg-image-aqua';
+				setTimeout(() => {
+					bgImageClass = 'bg-image-aqua';
+				}, 1000);
 				break;
 
 			default:
@@ -61,6 +68,8 @@
 	<TurnOff>
 		<WelcomeScreen />
 	</TurnOff>
+
+	<TurnOffChangeTheme />
 
 	<!-- Mobile sidebar -->
 	<aside class="z-10 flex-shrink-0 block md:hidden">

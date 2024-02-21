@@ -8,7 +8,7 @@
 	import quotes from '../data/quotes.json';
 
 	// get a random quote from the quotes.json
-	let randomQuote: { content: string; author: string } | undefined;
+	let randomQuote: { quote: string; author: string } | undefined;
 	onMount(() => {
 		randomQuote = quotes.quotes[Math.floor(Math.random() * quotes.quotes.length)];
 	});
@@ -20,9 +20,9 @@
 	</div>
 
 	{#if randomQuote}
-		<div class="col-span-1 flex items-center justify-center">
+		<div class="col-span-1 flex items-center justify-center px-10">
 			<div class="text-center flex flex-col">
-				<TypingEffect quote={randomQuote.content} author={randomQuote.author} />
+				<TypingEffect quote={randomQuote.quote} author={randomQuote.author} />
 			</div>
 		</div>
 	{/if}

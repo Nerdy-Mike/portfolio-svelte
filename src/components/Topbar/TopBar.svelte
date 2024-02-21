@@ -8,7 +8,6 @@
 	import { THEMES, setTheme } from '@/stores/theme-store';
 
 	import { toggleSidebar } from '../../stores/side-bar-store';
-	import { onMount } from 'svelte';
 
 	const submitUpdateTheme: SubmitFunction = ({ action }) => {
 		const theme = action.searchParams.get('theme');
