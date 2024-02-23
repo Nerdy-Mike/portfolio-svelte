@@ -80,16 +80,6 @@
 </div>
 
 <style>
-	button {
-		position: fixed;
-		right: 20px;
-		bottom: 20px;
-		padding: 20px;
-		font-weight: 700;
-		font-size: 16px;
-		z-index: 13;
-	}
-
 	.screen {
 		background-color: #000;
 		color: #e1eef6;

@@ -37,12 +37,4 @@
 </MainContainer>
 
 <style>
-	.box {
-		width: 300px;
-		height: 100vh;
-		overflow: scroll;
-		resize: both;
-		margin-bottom: 20px;
-		white-space: nowrap;
-	}
 </style>

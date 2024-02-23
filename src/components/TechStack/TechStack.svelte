@@ -116,8 +116,8 @@
 	</div>
 
 	<div class="absolute block lg:hidden -top-20 left-2 z-2">
-		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<div class="w-40">My tech stack</div>
+		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<img src={CurlyArrow} alt="Description of the image" class="rotate-180" />
 	</div>
 </div>
