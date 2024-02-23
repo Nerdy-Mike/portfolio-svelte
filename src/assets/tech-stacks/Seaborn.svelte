@@ -6,24 +6,6 @@
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 >
-	<metadata>
-		<rdf:RDF
-			xmlns:cc="http://creativecommons.org/ns#"
-			xmlns:dc="http://purl.org/dc/elements/1.1/"
-			xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-		>
-			<cc:Work>
-				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-				<dc:date>2020-09-07T14:13:58.676334</dc:date>
-				<dc:format>image/svg+xml</dc:format>
-				<dc:creator>
-					<cc:Agent>
-						<dc:title>Matplotlib v3.3.1, https://matplotlib.org/</dc:title>
-					</cc:Agent>
-				</dc:creator>
-			</cc:Work>
-		</rdf:RDF>
-	</metadata>
 	<defs>
 		<style type="text/css">
 			* {

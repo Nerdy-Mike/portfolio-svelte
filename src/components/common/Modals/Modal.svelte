@@ -34,6 +34,8 @@
 	on:click|self={closeModal}
 	on:keyup|self={closeModal}
 	on:keydown|self={closeModal}
+	role="button"
+	tabindex="0"
 >
 	<div class="card bg-base-100 shadow-xl p-4">
 		<div class="modal-action mt-0">

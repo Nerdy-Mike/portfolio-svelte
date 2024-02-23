@@ -190,8 +190,9 @@
 		if (randomGrids.length > 0) {
 			randomGrids.forEach((cell) => {
 				const cellId = `${cell[0]}${cell[1]}`;
-				if (document && document?.getElementById(cellId))
-					document.getElementById(cellId)?.classList.remove('border-gray-200');
+				if (document && document?.getElementById(cellId)) console.log(cellId);
+				document.getElementById(cellId)?.classList.remove('border-gray-200');
+				document.getElementById(cellId)?.classList.add('border-gray-800');
 			});
 		}
 
@@ -201,23 +202,11 @@
 
 		randomGrids.forEach((cell) => {
 			const cellId = `${cell[0]}${cell[1]}`;
-			if (document && document?.getElementById(cellId))
+			if (document && document?.getElementById(cellId)) {
+				document.getElementById(cellId)?.classList.remove('border-gray-800');
 				document.getElementById(cellId)?.classList.add('border-gray-200');
+			}
 		});
-	}
-
-	async function generateRandomGrid() {
-		if (randomGrid) {
-			const cellId = `${randomGrid[0]}${randomGrid[1]}`;
-			if (document && document?.getElementById(cellId))
-				document.getElementById(cellId)?.classList.remove('border-gray-200');
-		}
-		await tick();
-		randomGrid = [Math.floor(Math.random() * gridHeight), Math.floor(Math.random() * gridWidth)];
-		// change bg color of random cell
-		const cellId = `${randomGrid[0]}${randomGrid[1]}`;
-		if (document && document?.getElementById(cellId))
-			document.getElementById(cellId)?.classList.add('border-gray-200');
 	}
 
 	function startInterval() {
@@ -264,6 +253,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <section
 	class="flex flex-col justify-center items-center h-full relative"
 	id="grid-path"
