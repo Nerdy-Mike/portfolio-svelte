@@ -54,6 +54,7 @@
 </script>
 
 <MainContainer extraClass="card flex" withBg>
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
 		class="flex flex-col h-screen w-full overflow-auto my-6 relative"
 		bind:this={box}

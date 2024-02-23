@@ -65,9 +65,9 @@
 
 <div class={`flex bg-base-300 h-screen ${bgImageClass}`}>
 	<!-- Turn off effect  -->
-	<TurnOff>
+	<!-- <TurnOff>
 		<WelcomeScreen />
-	</TurnOff>
+	</TurnOff> -->
 
 	<TurnOffChangeTheme />
 

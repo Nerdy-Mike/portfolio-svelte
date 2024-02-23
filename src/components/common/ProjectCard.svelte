@@ -42,8 +42,8 @@
 
 			const images = await response.json();
 			// get the images from the folder
+			console.log('images', images.body.images);
 			projectImages = images.body.images;
-			console.log(projectImages);
 		} catch (error) {
 			console.error('An error occurred while fetching the images:', error);
 		}
@@ -55,7 +55,14 @@
 </script>
 
 <input type="checkbox" id={project.id} class="modal-toggle" bind:checked={isModalOpen} />
-<div class="modal w-full" on:click|self={closeModal} on:keyup|self={closeModal}>
+<div
+	class="modal w-full"
+	on:click|self={closeModal}
+	on:keyup|self={closeModal}
+	role="button"
+	tabindex="0"
+	on:keydown={handleKeyDown}
+>
 	<div class={cn(`modal-box relative`, project.renderType == 'web' ? 'max-w-6xl' : 'max-w-4xl')}>
 		<div class="modal-action mt-0 mb-6">
 			<button
@@ -161,10 +168,12 @@
 </div>
 
 <Saos animation={' slide-top 0.5s cubic-bezier(0.35, 0.5, 0.65, 0.95) both'} once>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
 		class="card bg-base-100 max-w-md mx-auto rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3 hover:scale-[102%] cursor-pointer transition-transform duration-200 ease-in-out"
 		on:click={openModal}
-		on:keyup={openModal}
+		role="button"
+		tabindex="0"
 	>
 		<div class=" md:flex">
 			<div class="p-8">

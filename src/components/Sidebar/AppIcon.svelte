@@ -65,6 +65,7 @@ out:fly|global={{ x: -20, y: 0, opacity: 0, easing: quintOut, duration: 500 }} -
 		class="relative py-8"
 		on:mouseenter={onMouseEnter}
 		on:mouseleave={onMouseLeave}
+		aria-roledescription="menuitem"
 	>
 		<a class={style.path} href={item.path} aria-label={item.title}>
 			<svelte:component this={item.icon} {sizePx} className="h-10 w-10" />

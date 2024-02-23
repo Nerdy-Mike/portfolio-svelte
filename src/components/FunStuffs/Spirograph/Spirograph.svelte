@@ -319,7 +319,6 @@ ext							__Ext
 				totalLength > 1
 			) {
 				freeze = true;
-				console.log('totalLength: ' + totalLength);
 				if (totalLength > 0) {
 					cleandraw = false;
 				}
