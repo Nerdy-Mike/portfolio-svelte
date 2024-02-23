@@ -60,5 +60,8 @@
 		"vitest": "^0.25.3"
 	},
 	"type": "module",
-	"dependencies": {}
+	"dependencies": {},
+	"resolutions": {
+		"string-width": "4.2.3"
+	}
 }
