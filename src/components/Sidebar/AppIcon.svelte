@@ -55,8 +55,8 @@
 </script>
 
 <!-- 
-in:fly={{ x: -20, y: 0, opacity: 0.5, easing: quintOut, duration: 500 }}
-out:fly={{ x: -20, y: 0, opacity: 0, easing: quintOut, duration: 500 }} -->
+in:fly|global={{ x: -20, y: 0, opacity: 0.5, easing: quintOut, duration: 500 }}
+out:fly|global={{ x: -20, y: 0, opacity: 0, easing: quintOut, duration: 500 }} -->
 
 <Motion>
 	<div
@@ -77,7 +77,7 @@ out:fly={{ x: -20, y: 0, opacity: 0, easing: quintOut, duration: 500 }} -->
 			<div
 				class="absolute top-0 left-20 kbd text-primary-content text-lg bg-base-100 z-50 hidden lg:flex lg:items-center lg:justify-center"
 				style="top: {topPositionPx}px"
-				transition:fly={{
+				transition:fly|global={{
 					duration: 500,
 					x: -10,
 					y: 0,

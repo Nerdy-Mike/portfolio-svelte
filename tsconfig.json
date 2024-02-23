@@ -4,6 +4,7 @@
 		"src/**/*",
 		"src/node_modules"
 	],
+	"moduleResolution": "bundler",
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
