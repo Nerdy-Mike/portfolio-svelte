@@ -19,7 +19,7 @@
 	function closeModal() {
 		isModalOpen = false;
 	}
-	
+
 	function handleKeyDown(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
 			closeModal();
@@ -114,7 +114,7 @@
 							href={project.appStore}
 							class=" hover:underline text-info"
 							target="_blank"
-							rel="noopener noreferrer">{project.appStore}</a
+							rel="noopener noreferrer">Link AppStore</a
 						>
 					</p>
 
@@ -124,7 +124,7 @@
 							href={project.playStore}
 							class=" hover:underline text-info"
 							target="_blank"
-							rel="noopener noreferrer">{project.playStore}</a
+							rel="noopener noreferrer">Link PlayStore</a
 						>
 					</p>
 				{/if}
@@ -166,7 +166,7 @@
 		on:click={openModal}
 		on:keyup={openModal}
 	>
-		<div class="md:flex">
+		<div class=" md:flex">
 			<div class="p-8">
 				<div class="flex flex-row w-full justify-between items-center">
 					<div class="uppercase tracking-wide text-sm text-primary font-semibold">
@@ -194,12 +194,7 @@
 				</p>
 				<p class="mt-2 text-neutral-content">
 					<span class="font-semibold text-secondary">Show case:</span>
-					<a
-						href={project.showCase}
-						class=" hover:underline text-info"
-						target="_blank"
-						rel="noopener noreferrer">{project.showCase}</a
-					>
+					<span class="hover:text-info"> Click here for more details </span>
 				</p>
 			</div>
 		</div>

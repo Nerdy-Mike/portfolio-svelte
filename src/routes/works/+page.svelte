@@ -44,6 +44,8 @@
 	}
 
 	onMount(() => {
+		isMobile = window.innerWidth <= 768;
+
 		window.addEventListener('scroll', parseScroll);
 		window.addEventListener('resize', () => {
 			isMobile = window.innerWidth <= 768;
@@ -130,7 +132,7 @@
 		</div>
 	</div>
 
-	<div class="absolute bottom-4 right-16 z-10">
+	<div class="absolute bottom-4 right-2 lg:right-16 z-10">
 		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<div class="flex flex-col items-center justify-center">
 			<img src={CurlyArrow} alt="Description of the image" class="" />

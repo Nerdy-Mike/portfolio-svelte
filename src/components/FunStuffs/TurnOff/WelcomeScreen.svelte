@@ -14,7 +14,7 @@
 	});
 </script>
 
-<div class="grid grid-cols-2">
+<div class="flex flex-col lg:grid lg:grid-cols-2">
 	<div class="col-span-1">
 		<Spirograph />
 	</div>

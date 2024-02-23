@@ -1,9 +1,11 @@
 <script>
-	import MainContainer from '../components/common/Containers/MainContainer.svelte';
-	import Grid2ColContainer from '../components/common/Containers/Grid2ColContainer.svelte';
-	import ComponentContainer from '../components/common/Containers/ComponentContainer.svelte';
+	import MainContainer from '@/components/common/Containers/MainContainer.svelte';
+	import Grid2ColContainer from '@/components/common/Containers/Grid2ColContainer.svelte';
+	import ComponentContainer from '@/components/common/Containers/ComponentContainer.svelte';
 
-	import TechStack from '../components/TechStack/TechStack.svelte';
+	import TechStack from '@/components/TechStack/TechStack.svelte';
+
+	import PathFinding from '@/components/FunStuffs/PathFinding/PathFinding.svelte';
 
 	import { MailIcon, GithubIcon, LinkedinIcon } from 'svelte-feather-icons';
 
@@ -77,7 +79,9 @@
 		</ComponentContainer>
 
 		<ComponentContainer slot="right" extraClass="w-full h-full">
-			<TechStack />
+			<!-- <TechStack /> -->
+
+			<PathFinding />
 		</ComponentContainer>
 	</Grid2ColContainer>
 </MainContainer>

@@ -67,7 +67,7 @@
 	</div>
 </Modal>
 
-<section class="flex flex-col w-full h-full justify-center items-center">
+<section class="flex flex-col w-full h-full justify-center items-center px-6">
 	<div class={cn(`padding card bg-base-300 lg:py-16 mx-auto max-w-screen-lg`)}>
 		<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center">Contact me</h2>
 		<p class="mb-8 text-centersm:text-xl">
