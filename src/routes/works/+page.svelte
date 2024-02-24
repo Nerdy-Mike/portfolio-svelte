@@ -9,6 +9,7 @@
 	import CurlyArrow from '@/assets/icons/curly-arrow-64.png';
 
 	import data from './works.json';
+	import { worksData } from '@/routes/works/data';
 
 	let box: any;
 	let scrollHeight = 0;
@@ -20,7 +21,6 @@
 	let scrollableElement: any;
 	let scrollableElementHeight = 0;
 
-	const worksData = data as ProjectsData;
 
 	function parseScroll() {
 		if (maxScrollHeight == 0) {
@@ -82,7 +82,7 @@
 				</div>
 
 				<div class="flex h-full flex-col">
-					{#each worksData.projects as project, index (project)}
+					{#each worksData as project, index (project)}
 						<ProjectCard {project} />
 					{/each}
 				</div>
@@ -90,7 +90,7 @@
 		{:else}
 			<div class="wrapper px-4 py-8 pb-10">
 				<div class="flex h-full flex-col">
-					{#each worksData.projects as project, index (project)}
+					{#each worksData as project, index (project)}
 						{#if index % 2 === 0}
 							<ProjectCard {project} />
 						{:else}
@@ -115,7 +115,7 @@
 				</div>
 
 				<div class="flex h-full flex-col">
-					{#each worksData.projects as project, index (project)}
+					{#each worksData as project, index (project)}
 						{#if index % 2 !== 0}
 							<ProjectCard {project} />
 						{:else}

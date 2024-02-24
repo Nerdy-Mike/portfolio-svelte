@@ -19,6 +19,7 @@ const config = {
 			'@/lib': 'src/lib/*',
 			'@/utils': 'src/utils/*',
 			'@/types': 'src/types/*',
+			'@/static': 'src/static/*',
 			'@/routes': 'src/routes/*',
 			'@/assets': 'src/assets/*',
 			'@/stores': 'src/stores/*',

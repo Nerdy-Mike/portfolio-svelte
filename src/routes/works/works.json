@@ -21,7 +21,8 @@
 				"Ensure timely delivery of features",
 				"Code review and quality assurance"
 			],
-			"folder": "projects/build-you"
+			"folder": "projects/build-you",
+			"files": ["1", "2", "3", "4", "5", "6", "7", "8"]
 		},
 		{
 			"id": "2",
@@ -41,7 +42,8 @@
 				"Optimize web performance for better user experience",
 				"Optimize website performance for SEO"
 			],
-			"folder": "projects/cpap"
+			"folder": "projects/cpap",
+			"files": ["1", "2", "3", "4", "5", "6", "7"]
 		},
 		{
 			"id": "3",
@@ -60,7 +62,8 @@
 				"Frontend development of the internal dashboard",
 				"Collaborate with backend team to integrate frontend with backend services"
 			],
-			"folder": "projects/papaya"
+			"folder": "projects/papaya",
+			"files": ["1", "2", "3", "4"]
 		},
 		{
 			"id": "4",
@@ -79,7 +82,8 @@
 				"Develop frontend components for the internal tool",
 				"Ensure UI consistency and responsiveness"
 			],
-			"folder": "projects/polly-property"
+			"folder": "projects/polly-property",
+			"files": ["1", "2", "3", "4", "5", "6", "7"]
 		},
 		{
 			"id": "5",
@@ -99,7 +103,8 @@
 				"Ensure cross-browser compatibility",
 				"Optimize website performance for SEO"
 			],
-			"folder": "projects/zoodoo"
+			"folder": "projects/zoodoo",
+			"files": ["1", "2", "3", "4", "5"]
 		},
 		{
 			"id": "6",
@@ -118,7 +123,8 @@
 				"Develop frontend for digital marketing strategies",
 				"Optimize website performance for SEO"
 			],
-			"folder": "projects/start-and-go"
+			"folder": "projects/start-and-go",
+			"files": ["1", "2", "3", "4"]
 		},
 		{
 			"id": "7",
@@ -138,7 +144,8 @@
 				"Optimize web performance for large-scale ecommerce",
 				"Optimize website performance for SEO"
 			],
-			"folder": "projects/dulux"
+			"folder": "projects/dulux",
+			"files": ["1", "2", "3", "4", "5", "6", "7"]
 		}
 	]
 }

@@ -35,9 +35,7 @@
 							value to the end-users
 						</p>
 
-						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
-							👨‍🎓 Graduated from the University of Adelaide with Computer Science degree
-						</p>
+		
 
 						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
 							📫 Feel free to reach out to me for any project or collaboration

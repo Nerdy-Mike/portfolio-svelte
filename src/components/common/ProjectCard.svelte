@@ -6,9 +6,11 @@
 	import type { Project } from '@/types/project';
 	import cn from '@/lib/tailwind-merged';
 
+	import { worksData } from '@/routes/works/data';
+
 	export let project: Project;
 
-	let projectImages: any[] = [];
+	const projectImages = project?.files ? project.files : [];
 
 	let isModalOpen: boolean = false;
 
@@ -26,30 +28,7 @@
 		}
 	}
 
-	async function getImagesFromFolder(path: string) {
-		try {
-			const response = await fetch(`/api/images`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ folder: path })
-			});
-
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-
-			const images = await response.json();
-			// get the images from the folder
-			console.log('images', images.body.images);
-			projectImages = images.body.images;
-		} catch (error) {
-			console.error('An error occurred while fetching the images:', error);
-		}
-	}
 	onMount(() => {
-		getImagesFromFolder(project.folder);
 		window.addEventListener('keydown', handleKeyDown);
 	});
 </script>
@@ -155,7 +134,7 @@
 						<div class="carousel-item">
 							<!-- svelte-ignore a11y-img-redundant-alt -->
 							<img
-								src="data:image/jpeg;base64,{image}"
+								src={image}
 								class={cn('rounded-box object-fill', project.renderType == 'web' ? 'w-96' : 'w-72')}
 								alt="Project image"
 							/>
@@ -189,6 +168,12 @@
 					{project.project}
 				</p>
 				<p class="mt-2 text-neutral-content italic">{project.description}</p>
+				<p class="mt-2 text-neutral-content">
+					<span class="font-semibold text-secondary">Project type:</span>
+					<span class="uppercase">
+						{project.type}
+					</span>
+				</p>
 				<p class="mt-2 text-neutral-content">
 					<span class="font-semibold text-secondary">Role:</span>
 					{project.role}

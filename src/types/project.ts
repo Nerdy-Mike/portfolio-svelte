@@ -27,6 +27,7 @@ export interface Project {
 	playStore?: string;
 	responsibilities: string[];
 	folder: string;
+	files: string[];
 }
 
 export interface ProjectsData {
