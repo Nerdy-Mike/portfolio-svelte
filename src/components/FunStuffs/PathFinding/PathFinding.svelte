@@ -142,17 +142,6 @@
 		});
 	}
 
-	// function animatePath() {
-	// 	shortestPath.forEach((cell, index) => {
-	// 		const cellId = `${cell[0]}${cell[1]}`;
-
-	// 		setTimeout(() => {
-	// 			if (document && document?.getElementById(cellId))
-	// 				document.getElementById(cellId)?.classList.add('bg-white');
-	// 		}, index * 100);
-	// 	});
-	// }
-
 	function animatePath() {
 		stopInterval();
 		pathQueue.forEach((path: any, pathIndex: number) => {
@@ -173,7 +162,7 @@
 					if (document && document?.getElementById(cellId)) {
 						document.getElementById(cellId)?.classList.add('bg-white');
 					}
-				}, cellIndex * 100); // adjust the delay as needed
+				}, cellIndex * 100);
 			});
 		});
 	}
@@ -212,7 +201,7 @@
 	function startInterval() {
 		clearInterval(intervalJob);
 		setTimeout(() => {
-			intervalJob = setInterval(generateRandomGrids, 1000); // adjust the interval as needed
+			intervalJob = setInterval(generateRandomGrids, 1000);
 		}, 1000);
 	}
 
@@ -225,10 +214,6 @@
 
 		for (let i = 0; i < randomGrids.length; i++) {
 			const path = bfs(grid, randomGrids[i], endGrid);
-			// if (path.length > 0) {
-			// 	shortestPath = path;
-			// 	animatePath();
-			// }
 			if (path.length > 0) {
 				pathQueue.push(path);
 			}
@@ -279,12 +264,14 @@
 	<div class="absolute hidden lg:block lg:bottom-4 lg:-left-10 z-2">
 		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<img src={CurlyArrow} alt="Description of the image" class="rotate-90" />
-		<div class="w-44 text-center">Click on icon for path finding animation</div>
+		<div class="w-44 text-center text-primary-content">
+			Click on icon for path finding animation
+		</div>
 	</div>
 
 	<div class="absolute block lg:hidden -top-20 left-2 z-2">
 		<!-- svelte-ignore a11y-img-redundant-alt -->
-		<div class="w-40">Click on icon for path finding animation</div>
+		<div class="w-40 text-primary-content">Click on icon for path finding animation</div>
 		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<img src={CurlyArrow} alt="Description of the image" class="rotate-180" />
 	</div>

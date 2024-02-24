@@ -38,19 +38,13 @@
 	$: {
 		switch ($theme) {
 			case THEMES[0]:
-				setTimeout(() => {
-					bgImageClass = 'bg-image-space';
-				}, 1000);
+				bgImageClass = 'bg-image-space';
 				break;
 			case THEMES[1]:
-				setTimeout(() => {
-					bgImageClass = 'bg-image-forest';
-				}, 1000);
+				bgImageClass = 'bg-image-forest';
 				break;
 			case THEMES[2]:
-				setTimeout(() => {
-					bgImageClass = 'bg-image-aqua';
-				}, 1000);
+				bgImageClass = 'bg-image-aqua';
 				break;
 
 			default:
@@ -65,9 +59,9 @@
 
 <div class={`flex bg-base-300 h-screen ${bgImageClass}`}>
 	<!-- Turn off effect  -->
-	<!-- <TurnOff>
+	<TurnOff>
 		<WelcomeScreen />
-	</TurnOff> -->
+	</TurnOff>
 
 	<TurnOffChangeTheme />
 

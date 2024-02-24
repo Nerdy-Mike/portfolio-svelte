@@ -27,17 +27,19 @@
 						<span class="font-semibold">Michael</span>
 					</h1>
 					<div class="flex flex-col justify-start items-start">
-						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-2xl">
 							👨‍💻 A Full-stack Software Engineer based in Ho Chi Minh, Vietnam
 						</p>
-						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-2xl">
 							🚀 I'm passionate about building software that solves real-world problems and provides
 							value to the end-users
 						</p>
 
-		
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-2xl">
+							👨‍🎓 Graduated from the University of Adelaide with Computer Science degree
+						</p>
 
-						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-xl">
+						<p class="mt-4 mx-20 text-start text-primary-content text-lg 3xl:text-2xl">
 							📫 Feel free to reach out to me for any project or collaboration
 						</p>
 					</div>

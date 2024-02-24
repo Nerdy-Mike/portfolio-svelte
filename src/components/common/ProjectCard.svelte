@@ -164,14 +164,16 @@
 						{project.year}
 					</p>
 				</div>
-				<p class="block mt-1 text-lg leading-tight card-title text-accent hover:underline">
+				<p
+					class="block uppercase mt-1 text-lg leading-tight card-title text-accent hover:underline"
+				>
 					{project.project}
 				</p>
 				<p class="mt-2 text-neutral-content italic">{project.description}</p>
 				<p class="mt-2 text-neutral-content">
 					<span class="font-semibold text-secondary">Project type:</span>
-					<span class="uppercase">
-						{project.type}
+					<span class="capitalize">
+						{project?.type.replace(/-/g, ' ') || project?.type}
 					</span>
 				</p>
 				<p class="mt-2 text-neutral-content">
