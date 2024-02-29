@@ -1,7 +1,6 @@
 <script lang="ts">
 	import MainContainer from '@/components/common/Containers/MainContainer.svelte';
 
-	import ProjectCard from '@/components/common/ProjectCard.svelte';
 
 	// https://github.com/doomd
 	import { onMount } from 'svelte';
@@ -18,7 +17,6 @@
 		yTop = box.scrollTop;
 		yHeight = box.clientHeight;
 		yScroll = box.scrollHeight;
-		console.log('dfsf');
 	}
 
 	onMount(() => parseScroll());

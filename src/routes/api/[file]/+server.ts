@@ -5,7 +5,6 @@ import path from 'path';
 function slugFromPath(pathInput: string): string {
 	// Use Node's path module to get the basename of the path
 	const basename = path.basename(pathInput);
-	console.log(basename);
 
 	// Remove the file extension and replace any non-alphanumeric characters with hyphens
 	const slug = basename

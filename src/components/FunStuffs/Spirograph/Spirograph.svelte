@@ -140,7 +140,6 @@ ext							__Ext
 
 		let minDimension = Math.min(canvasWidth, canvasHeight);
 
-		console.log(minDimension);
 
 		let __Centerx = minDimension / 2,
 			__Centery = minDimension / 2;
@@ -880,10 +879,8 @@ ext							__Ext
 				var crmmax = Math.floor(50 / Cr);
 				var crm = crmmax + 1 - Math.ceil(Math.sqrt(Math.random() * (crmmax * crmmax)));
 				var add = 0;
-				console.log('crm: ' + crm);
 				if (crm < 4) {
 					add = 1 / Math.ceil(Math.random() * (4 - crm) * 2);
-					console.log('---add: ' + add);
 				}
 				Lr = Cr * (crm + add);
 
@@ -940,8 +937,6 @@ ext							__Ext
 			var r,
 				rd,
 				m = [1, 10, 1, 1][type];
-			console.log('---');
-			console.log(m);
 			if (main) m *= 10;
 
 			if (type == 2) {
@@ -957,7 +952,6 @@ ext							__Ext
 					r = Math.floor((Math.random() * 10 - 5) * m) / m;
 				}
 			}
-			console.log(r);
 			return r;
 		}
 		function setFormValues() {
@@ -1014,12 +1008,10 @@ ext							__Ext
 		function onKeydown(e) {
 			shift = e.shiftKey;
 			alt = e.altKey;
-			console.log('Shift ' + shift + ' - Alt ' + alt);
 		}
 		function onKeyup(e) {
 			shift = e.shiftKey;
 			alt = e.altKey;
-			console.log('Shift ' + shift + ' - Alt ' + alt);
 		}
 		function onInputKeyup(e) {
 			//console.log("key: "+e.keyCode+" shift: "+e.shiftKey );
@@ -1332,7 +1324,6 @@ ext							__Ext
 				__Ext = g();
 				handlrot = g();
 
-				console.log('hash parsed successfully');
 
 				setFormValues();
 
