@@ -13,7 +13,7 @@
 						class="btn btn-primary"
 						on:click={() => {
 							// open in new tab
-							window.open('https://my-blog-nerdy-mike.vercel.app/', '_blank');
+							window.open('https://my-blog-teal-theta.vercel.app/', '_blank');
 						}}>Let's go</button
 					>
 				</div>
